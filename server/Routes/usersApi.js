@@ -33,6 +33,29 @@ usersRouter.get("/:id", function(req, res) {
     })
 });
 
+//get only one user using id
+usersRouter.post("/:id", function(req, res) {
+    Users.findById(req.params.id, function(err, data) {
+        if(err) {
+            res.status(500).send({err: err});
+        }else {
+            var obj = {};
+            for(key in req.body) {
+                obj[key] = req.body[key];
+            }
+            obj.date = new Date().toDateString;
+            data.requests.push(obj);
+            data.save(function(err, result) {
+                if(err) {
+                    res.status(500).send({err: err});
+                }else {
+                    res.status(200).send({message: "success", data: data});
+                }
+            })
+        }
+    })
+});
+
 //remove a specific user
 usersRouter.delete("/:id", function(req, res) {
     Users.findById(req.params.id, function(err, data) {
@@ -48,7 +71,7 @@ usersRouter.delete("/:id", function(req, res) {
             })
         }
     })
-})
+});
 
 //update a specific user
 usersRouter.put("/:id", function(req, res) {
@@ -68,6 +91,6 @@ usersRouter.put("/:id", function(req, res) {
             })
         }
     })
-})
+});
 
 module.exports = usersRouter;

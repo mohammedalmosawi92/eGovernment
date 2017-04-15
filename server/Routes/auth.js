@@ -45,7 +45,7 @@ authRouter.post("/signin", function(req, res) {
                     res.status(500).send({err: err});
                 }else if(result){
                     var token = jwt.sign(user, config.secret, {expiresIn: "2h"});
-                    res.status(200).send({message: "You have signed in", privilege: user.privilege, token: token,id: user._id})
+                    res.status(200).send({message: "You have signed in", privilege: user.privilege, token: token,id: user._id, requests: user.requests})
                 }else {
                     res.status(403).send({message: "The password is wrong"});
                 }
