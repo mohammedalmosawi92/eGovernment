@@ -5,6 +5,10 @@ var Personal = require("../Model/personalInfo.js");
 //setup router
 var apiRouter = express.Router();
 
+//import privileges
+var adminPriv = require("../Privilege/admin.js");
+var userAdminPriv = require("../Privilege/userAdminPriv.js");
+
 //get all the personal info
 apiRouter.get("/", function(req, res) {
     Personal.find({}, function(err, data) {
@@ -14,7 +18,10 @@ apiRouter.get("/", function(req, res) {
             res.status(200).send({message: "success", data: data});
         }
     })
-})
+});
+
+//only users can do the requests below
+apiRouter.use(userAdminPriv);
 
 //get personal info by id
 apiRouter.get("/:id", function(req, res) {
@@ -25,7 +32,7 @@ apiRouter.get("/:id", function(req, res) {
             res.status(200).send({message: "success", data: data});
         }
     })
-})
+});
 
 //add new personal info
 apiRouter.post("/", function(req, res) {
@@ -37,7 +44,10 @@ apiRouter.post("/", function(req, res) {
             res.status(200).send({message: "success", data: data});
         }
     })
-})
+});
+
+//only admin can do the below requests
+apiRouter.use(adminPriv);
 
 //remove personal info
 apiRouter.delete("/:id", function(req, res) {
@@ -49,7 +59,7 @@ apiRouter.delete("/:id", function(req, res) {
                 if(err) {
                     res.status(500).send({err: err});
                 }else {
-                    res.status(200).send({message: "success", data: removedData});
+                    res.status(200).send({message: "You have delete a personal info", data: removedData});
                 }
             })
         }
@@ -69,7 +79,7 @@ apiRouter.put("/:id", function(req, res) {
                 if(err) {
                     res.status(500).send({err: err});
                 }else {
-                    res.status(200).send({message: "success", data: updatedData});
+                    res.status(200).send({message: "You have updated a personal info", data: updatedData});
                 }
             })
         }

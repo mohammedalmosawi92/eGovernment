@@ -27,12 +27,14 @@ app.set("view engine", "ejs");
 
 //import routes
 var apiRouter = require("./Routes/api.js");
+var usersRouter = require("./Routes/usersApi.js");
 var authRouter = require("./Routes/auth.js");
 var filesRouter = require("./Routes/files.js");
 
 //use routes
 app.use(authRouter);
 app.use("/personal", apiRouter);
+app.use("/users", usersRouter);
 app.use(filesRouter);
 
 //listen to port
