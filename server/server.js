@@ -18,9 +18,11 @@ app.use(bodyParser.json());
 
 //import routes
 var apiRouter = require("./Routes/api.js");
+var authRouter = require("./Routes/auth.js");
 
 //use routes
 app.use("/personal", apiRouter);
+app.use(authRouter);
 
 //listen to port
 app.listen(port, function() {

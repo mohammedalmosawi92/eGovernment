@@ -1,13 +1,13 @@
 var express = require("express");
 var mongoose = require("mongoose");
-var personal = require("../Model/personalInfo.js");
+var Personal = require("../Model/personalInfo.js");
 
 //setup router
 var apiRouter = express.Router();
 
 //get all the personal info
 apiRouter.get("/", function(req, res) {
-    personal.find({}, function(err, data) {
+    Personal.find({}, function(err, data) {
         if(err) {
             res.status(500).send({err: err});
         }else {
@@ -18,7 +18,7 @@ apiRouter.get("/", function(req, res) {
 
 //get personal info by id
 apiRouter.get("/:id", function(req, res) {
-    personal.findById(req.params.id, function(err, data) {
+    Personal.findById(req.params.id, function(err, data) {
         if(err) {
             res.status(500).send({err: err});
         }else {
@@ -29,7 +29,7 @@ apiRouter.get("/:id", function(req, res) {
 
 //add new personal info
 apiRouter.post("/", function(req, res) {
-    var newPersonal = new personal(req.body);
+    var newPersonal = new Personal(req.body);
     newPersonal.save(function(err, data) {
         if(err) {
             res.status(500).send({err: err});
@@ -41,7 +41,7 @@ apiRouter.post("/", function(req, res) {
 
 //remove personal info
 apiRouter.delete("/:id", function(req, res) {
-    personal.findById(req.params.id, function(err, data) {
+    Personal.findById(req.params.id, function(err, data) {
         if(err) {
             res.status(500).send({err: err});
         }else {
@@ -58,7 +58,7 @@ apiRouter.delete("/:id", function(req, res) {
 
 //update personal info
 apiRouter.put("/:id", function(req, res) {
-    personal.findById(req.params.id, function(err, data) {
+    Personal.findById(req.params.id, function(err, data) {
         if(err) {
             res.status(500).send({err: err});
         }else {
