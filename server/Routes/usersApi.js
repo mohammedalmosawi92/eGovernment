@@ -33,7 +33,7 @@ usersRouter.get("/:id", function(req, res) {
     })
 });
 
-//get only one user using id
+//add request type and the date of the request
 usersRouter.post("/:id", function(req, res) {
     Users.findById(req.params.id, function(err, data) {
         if(err) {
