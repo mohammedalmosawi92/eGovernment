@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/views/gov.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/777811c730.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
@@ -15,8 +15,7 @@
 </head>
 
 <body ng-app="app" ng-controller="ctrl">
-   
-<!--
+    <!--
     <div class="header-wrapper">
         <div class="site-name">
             <h1>EGovernment</h1>
@@ -24,31 +23,28 @@
         </div>
     </div>
 -->
-    
     <div class="flag">
-       <div class="row text-right">
-           <div class="col-md-12">
-               <h2>الموقع الرسمي للحكومة اللبنانية الالكترونية</h2>
-           </div>
-       </div>
+        <div class="row text-right">
+            <div class="col-md-12">
+                <h2>الموقع الرسمي للحكومة اللبنانية الالكترونية</h2>
+            </div>
+        </div>
     </div>
-    
     <div class="menu">
         <div class="navbar">
             <div class="container-full">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-th-list" aria-hidden="true"></i>
+                        <i class="glyphicon glyphicon-list" aria-hidden="true"></i>
                     </button>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#/home" style="text-align: center">الصفحة الرئيسية</a></li>
-                        <li><a href="#">من نحن</a></li>
-                        <li><a href="#">الخدمات</a></li>
-                        <li><a href="#">Solutions</a></li>
-                        <li><a href="#/signup">تسجيل الدخول</a></li>
                         <li><a href="#">الاتصال بنا</a></li>
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#/signup">تسجيل الدخول</a></li>
+                        <li><a href="#">الخدمات</a></li>
+                        <li><a href="#/home" style="text-align: center">الصفحة الرئيسية</a></li>
                     </ul>
                 </div>
                 <!--/.navbar-collapse -->
@@ -57,8 +53,8 @@
         <div class="mini-menu">
             <label>
           <select class="selectnav">
-            <option value="#" selected>Home</option>
-            <option value="#">About</option>
+            <option value="#" selected>الصفحة الرئيسية</option>
+            <option value="#">الخدمات</option>
             <option value="#">→ Another action</option>
             <option value="#">→ Something else here</option>
             <option value="#">→ Another action</option>
@@ -70,15 +66,71 @@
           </label>
         </div>
     </div>
-    
     <ng-view></ng-view>
-    
+
+    <div class="footer-wrapper">
+        <div class="site-content">
+            <div class="container">
+                <div class="row text-center">
+
+                    <div class="block col-sm-3 col-sm-6">
+                        <h1>الحكومة الالكترونية</h1>
+                        <ul>
+                            <li><a href="#">الصفحة الرئيسية</a></li>
+                            <li><a href="#">الخدمات</a></li>
+                            <li><a href="#">الخدمات</a></li>
+                        </ul>
+                    </div>
+                    <div class="block col-sm-3 col-sm-6">
+                        <h1>عنا</h1>
+                        <ul>
+                            <li><a href="#">من نحن</a></li>
+                            <li><a href="#">الحقوق</a></li>
+                            <li><a href="#">للاتصال بنا</a></li>
+                        </ul>
+                    </div>
+                    <div class="block col-sm-3 col-sm-6">
+                        <h1>المساعدة</h1>
+                        <ul>
+                            <li><a href="#">مركز المساعدة</a></li>
+                            <li><a href="#">الاقتراحات</a></li>
+                            <li><a href="#">الشكاوى</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="block col-sm-3">
+                        <h1> يمكنكم متابعتنا على مواقع التواصل الاجتماعي</h1>
+                        <ul class="social">
+
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="copy-rights">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        Copyright(c) 2017 website name
+                    </div>
+                    <div class="col-md-6">
+                        Images from: <a href="http://www.wallpaperswide.com">http://wallpaperswide.com</a> / <a href="http://www.wallcoo.net"> www.wallcoo.net</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://code.angularjs.org/1.6.4/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.6.4/angular-route.min.js"></script>
     <script src="/js/app.js"></script>
     <script src="/js/views/home/home.js"></script>
     <script src="/js/views/signup/signup.js"></script>
-    
 </body>
 
 </html>
