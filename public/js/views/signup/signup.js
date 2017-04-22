@@ -1,5 +1,7 @@
-var app = angular.module("app.signup", ["ngRoute"]);
-app.config(function($routeProvider) {
+var app = angular.module("app.signup", ["ngRoute", "tempModule"]);
+
+
+app.config(function ($routeProvider) {
     $routeProvider.when("/signup", {
         templateUrl: "/js/views/signup/signup.tpl.html",
         controller: "signupCtrl"
@@ -7,5 +9,5 @@ app.config(function($routeProvider) {
 })
 
 app.controller("signupCtrl", function($scope) {
-    $scope.gender = "Male"
+    
 })

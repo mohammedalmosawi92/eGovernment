@@ -69,13 +69,13 @@ body {
     border: none;
     font-family: 'source_sans_probold';
     text-transform: uppercase;
-    padding: 15px 0px;
-    padding-right: 40px;
+    padding: 15px;
     font-weight: 700;
+    text-align: center;
 }
 
-.navbar-nav>li>a:hover {
-    color: #888888;
+.navbar-nav>li>a:hover  {
+    color: #C8E6C9;
     background: none;
 }
 
@@ -182,7 +182,7 @@ body {
     line-height: 42px;
     font-size: 30px;
     background: #0b913d;
-    
+    cursor: pointer;
     border-radius: 50px;
     bottom: 42%;
     opacity: 0.8;
@@ -190,11 +190,12 @@ body {
 
 .banner .carousel-control i {
     padding-top: 13px;
-    cursor: pointer;
+    
 }
-
+/*dddddddddddddddddddddddddddddddddddddddddddddddd*/
 .banner .carousel-control:hover {
     background: #3b3e4a;
+    transition: all 1s;
 }
 
 .banner .carousel-control.right {
@@ -260,15 +261,16 @@ body {
 	signup page styles starts here
  ************************************************/
 
-.signup-page {
+.personInfo-page {
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
-.signup-row {
+.personInfo-row {
     margin-bottom: 30px;
 }
 
-.signup-input {
+.personInfo-input {
     border: 1px solid transparent;
     outline: none !important;
     -webkit-box-shadow: none !important;
@@ -279,7 +281,7 @@ body {
     direction: rtl;
 }
 
-.signup-input:focus {
+.personInfo-input:focus {
     border: 1px solid transparent;
     border-bottom: 2px solid black;
     border-radius: 0px;
@@ -460,7 +462,7 @@ body {
 }
 
 .site-content {
-    padding: 55px 0;
+    padding: 30px 0;
     overflow: hidden;
 }
 
@@ -576,6 +578,24 @@ body {
     color: #fff;
 }
 
+/************************************************
+	confirm starts here
+ ************************************************/
+
+.confirm-page {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.item-name {
+    font-size: 30px;
+    font-family: "Cairo";
+}
+
+.item-info {
+    font-size: 20px;
+    font-family: "Cairo";
+}
 
 /************************************************
 	media query starts here

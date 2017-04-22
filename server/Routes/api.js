@@ -21,7 +21,7 @@ apiRouter.get("/", function(req, res) {
 });
 
 //only users can do the requests below
-apiRouter.use(userAdminPriv);
+//apiRouter.use(userAdminPriv);
 
 //get personal info by id
 apiRouter.get("/:id", function(req, res) {
@@ -47,7 +47,7 @@ apiRouter.post("/", function(req, res) {
 });
 
 //only admin can do the below requests
-apiRouter.use(adminPriv);
+//apiRouter.use(adminPriv);
 
 //remove personal info
 apiRouter.delete("/:id", function(req, res) {

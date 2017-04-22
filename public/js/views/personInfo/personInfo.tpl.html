@@ -1,0 +1,101 @@
+<div class="personInfo-page">
+    <form name="myForm">
+        <div class="container">
+           <div class="row">
+               <div class="col-md-12">
+                   <h1></h1>
+               </div>
+           </div>
+            <div class="personInfo-row">
+                <div class="row">
+                    <div class="col-md-3">
+                        <input type="text" class="form-control personInfo-input" placeholder="الشهرة" ng-model="user.lastName">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control personInfo-input" placeholder="اسم الأب" ng-model="user.fatherName">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control personInfo-input" placeholder="الاسم الأول" ng-model="user.firstName">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" class="form-control personInfo-input" placeholder="رقم الهوية" ng-model="user.IdNumber">
+                    </div>
+                </div>
+            </div>
+            <div class="personInfo-row">
+                <div class="row">
+                    <div class="col-md-3">
+                        <select ng-model="user.sex" class="form-control">
+                            <option value="male">ذكر</option>
+                            <option value="female">انثى</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="date" class="form-control personInfo-input" placeholder="تاريخ الميلاد" ng-model="user.dob">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control personInfo-input" placeholder="مكان الولادة" ng-model="user.placeOfBirth">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control personInfo-input" placeholder="اسم الأم و شهرتها" ng-model="user.motherName">
+                    </div>
+                </div>
+            </div>
+            <div class="personInfo-row">
+                <div class="row">
+                    <div class="col-md-3">
+                        <select ng-model="user.status" class="form-control">
+                            <option value="single"> اعزب </option>
+                            <option value="married"> متزوج/ة</option>
+                            <option value="divorced"> مطلق/ة</option>
+                            <option value="widow"> ارملة </option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control personInfo-input" placeholder="المذهب" ng-model="user.religion">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" class="form-control personInfo-input" placeholder="رقم القيد" ng-model="user.RegistrationNum">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control personInfo-input" placeholder="مكان القيد" ng-model="user.RegistrationPlace">
+                    </div>
+                </div>
+            </div>
+            <div class="personInfo-row">
+                <div class="row">
+                    <div class="col-md-4">
+                        <input type="text" class="form-control personInfo-input" placeholder="رقم الهاتف الخليوي" ng-model="user.cellPhone">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control personInfo-input" placeholder="رقم الهاتف الأرضي" ng-model="user.phone">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control personInfo-input" placeholder="عنوان السكن" ng-model="user.address">
+                    </div>
+                </div>
+            </div>
+            <div class="personInfo-row">
+                <div class="col-md-3">
+                    <input type="file" class="form-control personInfo-input" placeholder="صورة شمسية" ng-model="user.personalImage">
+                </div>
+                <div class="col-md-3">
+                    <label>الرجاء تحميل الصورة الشمسية</label>
+                </div>
+                <div class="col-md-3">
+                    <input type="file" class="form-control personInfo-input" placeholder="صورة الهوية" ng-model="user.idImage">
+                </div>
+                <div class="col-md-3">
+                    <label>الرجاء تحميل صورة الهوية</label>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="personInfo-btn-row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-info" ng-click="submit()" ng-disabled="myForm.$invalid">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

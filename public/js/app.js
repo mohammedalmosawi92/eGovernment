@@ -1,4 +1,4 @@
-var app = angular.module("app", ["ngRoute", "app.home", "app.signup"]);
+var app = angular.module("app", ["ngRoute", "app.home", "app.personInfo", "app.confirm", "app.signup"]);
 
 app.config(function($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix("");

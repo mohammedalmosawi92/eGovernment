@@ -1,0 +1,92 @@
+<div class="confirm-page">
+    <div class="container" ng-init="loadData()">
+        <div ng-repeat="item in list">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="item-name">
+                        First Name: {{item.firstName}}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="item-info">
+                        last Name: {{item.lastName}}
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="item-info">
+                        Father Name: {{item.fatherName}}
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="item-info">
+                        ID Number: {{item.IdNumber}}
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="item-info">
+                        Sex: {{item.sex}}
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="item-info">
+                        Date of Birth: {{item.dob | date : "dd-MM-yyyy"}}
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="item-info">
+                        Place of Birth: {{item.placeOfBirth}}
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="item-info">
+                        Mother name: {{item.motherName}}
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="item-info">
+                        Status: {{item.status}}
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="item-info">
+                        Religion: {{item.religion}}
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="item-info">
+                        Registration Num: {{item.RegistrationNum}}
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="item-info">
+                        Registration Place: {{item.RegistrationPlace}}
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="item-info">
+                        Cell Phone: {{item.cellPhone}}
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="item-info">
+                        Phone: {{item.phone}}
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="item-info">
+                        Address: {{item.address}}
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <button class="btn btn-info" ng-click="confirmData(item, $index)">Confirm</button>
+                    
+                    <button class="btn btn-danger" ng-click="deleteItem(item._id)">Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
