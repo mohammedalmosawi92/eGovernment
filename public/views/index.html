@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>eGovernment</title>
@@ -12,10 +13,72 @@
     <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body ng-app="app" ng-controller="ctrl">
-   <h1>{{msg}}</h1>
-    <script src="https://code.angularjs.org/1.6.2/angular.min.js"></script>
-    <script src="https://code.angularjs.org/1.6.2/angular-route.min.js"></script>
+   
+<!--
+    <div class="header-wrapper">
+        <div class="site-name">
+            <h1>EGovernment</h1>
+            <h2>الموقع الرسمي للحكومة اللبنانية الالكترونية</h2>
+        </div>
+    </div>
+-->
+    
+    <div class="flag">
+       <div class="row text-right">
+           <div class="col-md-12">
+               <h2>الموقع الرسمي للحكومة اللبنانية الالكترونية</h2>
+           </div>
+       </div>
+    </div>
+    
+    <div class="menu">
+        <div class="navbar">
+            <div class="container-full">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <i class="fa fa-th-list" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#/home" style="text-align: center">الصفحة الرئيسية</a></li>
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">الخدمات</a></li>
+                        <li><a href="#">Solutions</a></li>
+                        <li><a href="#/signup">تسجيل الدخول</a></li>
+                        <li><a href="#">الاتصال بنا</a></li>
+                    </ul>
+                </div>
+                <!--/.navbar-collapse -->
+            </div>
+        </div>
+        <div class="mini-menu">
+            <label>
+          <select class="selectnav">
+            <option value="#" selected>Home</option>
+            <option value="#">About</option>
+            <option value="#">→ Another action</option>
+            <option value="#">→ Something else here</option>
+            <option value="#">→ Another action</option>
+            <option value="#">→ Something else here</option>
+            <option value="#">Services</option>
+            <option value="#">Work</option>
+            <option value="#">Contact</option>
+          </select>
+          </label>
+        </div>
+    </div>
+    
+    <ng-view></ng-view>
+    
+    <script src="https://code.angularjs.org/1.6.4/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.4/angular-route.min.js"></script>
     <script src="/js/app.js"></script>
+    <script src="/js/views/home/home.js"></script>
+    <script src="/js/views/signup/signup.js"></script>
+    
 </body>
+
 </html>
