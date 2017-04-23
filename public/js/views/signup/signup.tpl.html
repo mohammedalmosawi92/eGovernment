@@ -1,43 +1,51 @@
 <div class="signup-page">
-    <div class="container">
-        <div class="row text-center">
-           <div class="col-md-12">
-               <h1>للتسجيل في موقعنا</h1>
-           </div>
-            
-        </div>
-        <div class="row">
-            <div class="col-sm-6 col-sm-offset-3">
-                <div class="row input-row">
-                    <div class="col-md-12">
-                        <label class="input-label">أسم المستخدم</label>
-                        <input type="text" placeholder="أسم المستخدم" class="form-control">
-                    </div>
+    <form name="signinForm">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h1>للتسجيل في موقعنا</h1>
                 </div>
-                <div class="row input-row">
-                    <div class="col-md-12">
-                        <label class="input-label">رقم الهوية</label>
-                        <input type="text" placeholder="رقم الهوية" class="form-control">
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="row input-row">
+                        <div class="col-md-12">
+                            <label class="input-label">أسم المستخدم</label>
+                            <input type="text" placeholder="أسم المستخدم" class="form-control" ng-model="user.username" required>
+                        </div>
                     </div>
-                </div>
-                <div class="row input-row">
-                    <div class="col-md-12">
-                        <label class="input-label">كلمة المرور</label>
-                        <input type="text" placeholder="كلمة المرور" class="form-control">
+                    <div class="row input-row">
+                        <div class="col-md-12">
+                            <label class="input-label">رقم الهوية</label>
+                            <input type="number" placeholder="رقم الهوية" class="form-control" ng-model="user.idNumber" required>
+                        </div>
                     </div>
-                </div>
-                <div class="row input-row">
-                    <div class="col-md-12">
-                        <label class="input-label">تاكيد كلمة المرور</label>
-                        <input type="text" placeholder="تاكيد كلمة المرور" class="form-control">
+                    <div class="row input-row">
+                        <div class="col-md-12">
+                            <label class="input-label">كلمة المرور</label>
+                            <input type="password" placeholder="كلمة المرور" class="form-control" ng-model="user.password" required>
+                        </div>
                     </div>
-                </div>
-                <div class="row input-btn">
-                    <div class="col-md-12">
-                        <input type="button" value="تسجيل" class="form-control btn-info">
+                    <div class="row input-row">
+                        <div class="col-md-12">
+                            <label class="input-label">تاكيد كلمة المرور</label>
+                            <input type="password" placeholder="تاكيد كلمة المرور" class="form-control" ng-model="user.confirmPassword" required>
+                        </div>
+                    </div>
+
+                    <div class="row input-row" ng-if="notMatch">
+                        <div class="col-md-12">
+                            <label class="notMatch-password">كلمتا المرور غير متطابقتين</label>
+                        </div>
+                    </div>
+
+                    <div class="row input-btn">
+                        <div class="col-md-12">
+                            <button class="btn btn-primary" ng-click="signup()" ng-disabled="signinForm.$invalid">تسجيل</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>

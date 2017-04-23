@@ -8,7 +8,7 @@ var personalSchema = new Schema({
     lastName: {
         type: String,
     },
-    IdNumber: {
+    idNumber: {
         type: Number,
         unique: true
     },

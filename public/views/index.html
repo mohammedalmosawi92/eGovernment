@@ -35,54 +35,74 @@
         <div class="navbar">
             <div class="container-full">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                         <i class="glyphicon glyphicon-list" aria-hidden="true"></i>
                     </button>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#/signup">تسجيل</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#login-modal">تسجيل الدخول</a></li>
-                        <li><a href="#/confirm">من نحن</a></li>
-                        <li><a href="#/personInfo">معلومات الشخصية</a></li>
-                        <li><a href="#">الخدمات</a></li>
-                        <li><a href="#/home" style="text-align: center">الصفحة الرئيسية</a></li>
+                        <li ng-if="loginCheck()"><a href="#/home" ng-click="logout()">تسجيل الخروج</a></li>
+                        <li ng-if="!loginCheck()"><a href="#/signup">تسجيل</a></li>
+                        <li ng-if="!loginCheck()">
+                            <a data-toggle="modal" data-target="#login-modal" class="signin-pointer">تسجيل الدخول</a>
+                        </li>
+                        <li class="dropdonw" ng-if="chechUser() === 'admin'">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/confirm">تاكيد البيانات</a></li>
+                                <li><a href="#">طلبات التغير</a></li>
+                                <li><a href="#">شكاوى</a></li>
+                            </ul>
+                        </li>
+                        <li ng-if="chechUser() === 'user'"><a href="#/personInfo">معلومات الشخصية</a></li>
+                        <li ng-if="chechUser() === 'user'"><a href="#">الخدمات</a></li>
+                        <li><a href="#/home">الصفحة الرئيسية</a></li>
                     </ul>
+                </div>
+                <div class="collapse-menu">
+                    <div class="navbar-collapse collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#/home" style="text-align: center">الصفحة الرئيسية</a></li>
+                            <li ng-if="chechUser() === 'user'"><a href="#">الخدمات</a></li>
+                            <li ng-if="chechUser() === 'user'"><a href="#/personInfo">معلومات الشخصية</a></li>
+                            <li class="dropdonw" ng-if="chechUser() === 'admin'">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#/confirm">تاكيد البيانات</a></li>
+                                    <li><a href="#">طلبات التغير</a></li>
+                                    <li><a href="#">شكاوى</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a data-toggle="modal" data-target="#login-modal" class="signin-pointer">تسجيل الدخول</a>
+                            </li>
+                            <li><a href="#/signup">تسجيل</a></li>
+                            <li ng-if="loginCheck()"><a href="#/home" ng-click="logout()">تسجيل الخروج</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <!--/.navbar-collapse -->
             </div>
         </div>
-        <div class="mini-menu">
-            <label>
-          <select class="selectnav">
-            <option value="#" selected>الصفحة الرئيسية</option>
-            <option value="#">الخدمات</option>
-            <option value="#">→ Another action</option>
-            <option value="#">→ Something else here</option>
-            <option value="#">→ Another action</option>
-            <option value="#">→ Something else here</option>
-            <option value="#">Services</option>
-            <option value="#">Work</option>
-            <option value="#">Contact</option>
-          </select>
-          </label>
-        </div>
     </div>
-    
+
     <!--  login Modal  -->
-    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none">
         <div class="modal-dialog">
             <div class="loginmodal-container">
                 <h1>تسجيل الدخول</h1><br>
-                <form class="login-form">
-                    <input type="text" name="user" placeholder="أسم المستخدم">
-                    <input type="password" name="pass" placeholder="كلمة المرور">
-                    <input type="submit" name="login" class="login loginmodal-submit" value="دخول">
+                <form class="login-form" name="signinForm">
+                    <input type="text" name="user" placeholder="أسم المستخدم" required ng-model="userInput.username">
+                    <input type="password" name="pass" placeholder="كلمة المرور" required ng-model="userInput.password">
+                    <button class="btn btn-primary" ng-disabled="signinForm.$invalid" data-toggle="modal" data-target="#login-modal" ng-click="signin()">دخول</button>
                 </form>
+                <h4>مستخدم جديد <a href="#/signup" data-toggle="modal" data-target="#login-modal">اضغط هنا</a></h4>
             </div>
         </div>
     </div>
-    
+
     <ng-view></ng-view>
 
     <div class="footer-wrapper">
@@ -131,12 +151,21 @@
     <script src="https://code.angularjs.org/1.6.4/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.6.4/angular-route.min.js"></script>
     <script src="/js/app.js"></script>
+    <!--  Routes  -->
     <script src="/js/views/home/home.js"></script>
     <script src="/js/views/personInfo/personInfo.js"></script>
     <script src="/js/views/signup/signup.js"></script>
     <script src="/js/views/confirm/confirm.js"></script>
+
+    <!--  Services  -->
     <script src="/js/services/tempServ.js"></script>
     <script src="/js/services/requests.js"></script>
+    <script src="/js/services/authServ.js"></script>
+    <script src="/js/services/token.js"></script>
+    <script src="/js/services/userId.js"></script>
+    <script src="/js/services/userPriv.js"></script>
+    <script src="/js/services/idNumber.js"></script>
+    <script src="/js/services/username.js"></script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@ var config = require("../config.js");
 var userAdminPriv = express();
 
 userAdminPriv.use("/", function(req, res, next) {
-    var token = req.get("Authorization").split("Bearer ")[0];
+    var token = req.get("Authorization").split("Bearer ")[1];
     jwt.verify(token, config.secret, function(err, decoded) {
         if(err) {
             res.status(500).send({message: "Invalid Token"})

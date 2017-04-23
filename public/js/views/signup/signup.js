@@ -1,5 +1,4 @@
-var app = angular.module("app.signup", ["ngRoute", "tempModule"]);
-
+var app = angular.module("app.signup", ["ngRoute", "authModule"]);
 
 app.config(function ($routeProvider) {
     $routeProvider.when("/signup", {
@@ -8,6 +7,19 @@ app.config(function ($routeProvider) {
     })
 })
 
-app.controller("signupCtrl", function($scope) {
-    
+app.controller("signupCtrl", function($scope, authService, $location) {
+    $scope.user = {};
+    $scope.notMatch = false;
+    $scope.signup = function() {
+        if($scope.user.password != $scope.user.confirmPassword) {
+            $scope.notMatch = true;
+        }else {
+            $scope.notMatch = false;
+            authService.signup($scope.user).then(function() {
+                $location.path("/home");
+            }, function(response) {
+                alert("This username already exists");
+            })
+        }
+    }
 })

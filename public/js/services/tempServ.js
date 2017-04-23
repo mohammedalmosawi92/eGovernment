@@ -10,6 +10,7 @@ app.service("tempService", function($http) {
     }
     
     this.postData = function(data) {
+        console.log(data);
         return $http.post("http://localhost:8080/temp/", data);
     }
     

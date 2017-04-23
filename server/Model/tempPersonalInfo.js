@@ -2,6 +2,10 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var tempPersonalSchema = new Schema({
+    username: {
+        type: String,
+        unique: true
+    },
     firstName: {
         type: String,
        
@@ -10,9 +14,8 @@ var tempPersonalSchema = new Schema({
         type: String,
         
     },
-    IdNumber: {
+    idNumber: {
         type: Number,
-        
         unique: true
     },
     sex: {

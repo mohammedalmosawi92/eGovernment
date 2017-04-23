@@ -25,7 +25,6 @@ authRouter.post("/signup", function(req, res) {
                 if(err) {
                     res.status(500).send({err: err});
                 }else {
-                    console.log(user);
                     res.status(200).send({message: "You have signed up"});
                 }
             })
@@ -45,7 +44,7 @@ authRouter.post("/signin", function(req, res) {
                     res.status(500).send({err: err});
                 }else if(result){
                     var token = jwt.sign(user, config.secret, {expiresIn: "2h"});
-                    res.status(200).send({message: "You have signed in", privilege: user.privilege, token: token,id: user._id, requests: user.requests})
+                    res.status(200).send({message: "You have signed in", username: user.username,privilege: user.privilege, token: token,id: user._id, requests: user.requests, idNumber: user.idNumber})
                 }else {
                     res.status(403).send({message: "The password is wrong"});
                 }

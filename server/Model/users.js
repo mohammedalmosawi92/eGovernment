@@ -17,6 +17,11 @@ var usersSchema = new Schema({
         default: "user",
         enum: ["user", "admin"]
     },
+    idNumber: {
+        type: Number,
+        required: true,
+        unique: true
+    },
     requests : []
 })
 

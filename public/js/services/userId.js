@@ -3,15 +3,15 @@ var app = angular.module("idModule", []);
 app.service("idService", function () {
     
     this.setId = function (id) {
-        localStorage['id'] = id;
+        localStorage["id"] = id;
     };
     
     this.getId = function () {
-        return localStorage["_id"];
+        return localStorage["id"];
     };
     
     this.removeId = function () {
-        localStorage.removeItem('id');
+        localStorage.removeItem("id");
     };
     
 });
