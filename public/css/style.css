@@ -38,16 +38,15 @@ body {
     margin: 0;
     font-size: 55px;
     color: #0b913d;
-    font-family: 'source_sans_probold';
+    font-family: "Cairo";
     text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
 .site-name h2 {
     font-size: 25px;
     line-height: 24px;
     color: #cac8c8;
-    font-family: 'source_sans_prolight';
+    font-family: "Cairo";
 }
 
 .menu {
@@ -67,14 +66,14 @@ body {
     font-size: 20px;
     background-image: none;
     border: none;
-    font-family: 'source_sans_probold';
+    font-family: "Cairo";
     text-transform: uppercase;
     padding: 15px;
     font-weight: 700;
     text-align: center;
 }
 
-.navbar-nav>li>a:hover  {
+.navbar-nav>li>a:hover {
     color: #C8E6C9;
     background: none;
 }
@@ -141,9 +140,8 @@ body {
 .banner .carousel-caption h1 {
     margin: 0;
     font-size: 60px;
-    font-family: 'source_sans_probold';
+    font-family: "Cairo";
     color: #fff;
-    letter-spacing: 5px;
     text-transform: uppercase;
     padding-bottom: 20px;
 }
@@ -151,9 +149,8 @@ body {
 .banner .carousel-caption h3 {
     font-size: 28px;
     line-height: 36px;
-    font-family: 'source_sans_prolight';
+    font-family: "Cairo";
     color: #fff;
-    letter-spacing: 3px;
     padding-bottom: 20px;
 }
 
@@ -161,7 +158,7 @@ body {
     color: #fff;
     font-size: 22px;
     line-height: 28px;
-    font-family: 'source_sans_problack';
+    font-family: "Cairo";
     text-transform: uppercase;
     padding: 10px 25px;
     background: #0b913d;
@@ -190,9 +187,11 @@ body {
 
 .banner .carousel-control i {
     padding-top: 13px;
-    
 }
+
+
 /*dddddddddddddddddddddddddddddddddddddddddddddddd*/
+
 .banner .carousel-control:hover {
     background: #3b3e4a;
     transition: all 1s;
@@ -258,7 +257,7 @@ body {
 
 
 /************************************************
-	signup page styles starts here
+	person info page styles starts here
  ************************************************/
 
 .personInfo-page {
@@ -306,6 +305,42 @@ body {
 
 
 /************************************************
+	signup page styles starts here
+ ************************************************/
+
+.signup-page {
+    direction: rtl;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: "Cairo";
+}
+
+.signup-page h1 {
+    margin-bottom: 50px;
+}
+
+.input-label {
+    font-size: 25px;
+    font-family: "Cairo";
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.input-row {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.input-row input {
+    font-family: "Cairo";
+}
+
+.input-btn {
+    margin-top: 30px;
+}
+
+
+/************************************************
 	generic styles starts here
  ************************************************/
 
@@ -339,8 +374,7 @@ body {
     line-height: 32px;
     color: #454855;
     text-transform: uppercase;
-    font-family: 'source_sans_probold';
-    letter-spacing: 1px;
+    font-family: "Cairo";
     direction: rtl;
 }
 
@@ -348,7 +382,7 @@ body {
     font-size: 18px;
     line-height: 24px;
     color: #454855;
-    font-family: 'source_sans_prolight';
+    font-family: "Cairo";
     direction: rtl;
 }
 
@@ -381,7 +415,7 @@ body {
     font-size: 18px;
     line-height: 24px;
     color: #3b3e4a;
-    font-family: 'source_sans_probold';
+    font-family: "Cairo";
     padding-bottom: 10px;
     text-transform: uppercase;
     direction: rtl;
@@ -471,7 +505,7 @@ body {
     line-height: 24px;
     color: #fff;
     text-transform: uppercase;
-    font-family: 'source_sans_probold';
+    font-family: "Cairo";
     padding-bottom: 10px;
     direction: rtl;
 }
@@ -490,7 +524,7 @@ body {
 .site-content .block ul li a {
     font-size: 14px;
     color: #cbcbcb;
-    font-family: 'source_sans_proregular';
+    font-family: "Cairo";
     border-bottom: 1px solid #83858b;
 }
 
@@ -507,7 +541,7 @@ body {
     border-radius: 0 20px 20px 0;
     background: #0b913d;
     color: #fff;
-    font-family: 'source_sans_problack';
+    font-family: "Cairo";
     text-transform: uppercase;
     border: none;
     padding: 6px 5px;
@@ -562,7 +596,7 @@ body {
 
 .copy-rights {
     color: #0b913d;
-    font-family: 'source_sans_proregular';
+    font-family: "Cairo";
     background: #454855;
     padding: 35px 0;
 }
@@ -570,13 +604,14 @@ body {
 .copy-rights a {
     color: #0b913d;
     font-size: 14px;
-    font-family: 'source_sans_proregular';
+    font-family: "Cairo";
     text-decoration: none;
 }
 
 .copy-rights a:hover {
     color: #fff;
 }
+
 
 /************************************************
 	confirm starts here
@@ -597,9 +632,105 @@ body {
     font-family: "Cairo";
 }
 
+.login-form {
+    direction: rtl;
+    font-family: "Cairo";
+}
+
+.loginmodal-container {
+    padding: 30px;
+    max-width: 350px;
+    width: 100% !important;
+    background-color: #F7F7F7;
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    font-family: roboto;
+}
+
+.loginmodal-container h1 {
+    text-align: center;
+    font-size: 1.8em;
+    font-family: "Cairo";
+}
+
+.loginmodal-container input[type=submit] {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.loginmodal-container input[type=text],
+input[type=password] {
+    height: 44px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+    -webkit-appearance: none;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-top: 1px solid #c0c0c0;
+    padding: 0 8px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.loginmodal-container input[type=text]:hover,
+input[type=password]:hover {
+    border: 1px solid #b9b9b9;
+    border-top: 1px solid #a0a0a0;
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.loginmodal {
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    height: 36px;
+    padding: 0 8px;
+}
+
+.loginmodal-submit {
+    border: 0px;
+    color: #fff;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+    background-color: #4d90fe;
+    padding: 17px 0px;
+    font-family: "Cairo";
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.loginmodal-submit:hover {
+    border: 0px;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    background-color: #357ae8;
+}
+
+.loginmodal-container a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 400;
+    text-align: center;
+    display: inline-block;
+    opacity: 0.6;
+    transition: opacity ease 0.5s;
+}
+
+.login-help {
+    font-size: 12px;
+}
+
+
 /************************************************
 	media query starts here
  ************************************************/
+
 
 /*
 @media (max-width: 900px) {
@@ -631,38 +762,128 @@ body {
 */
 
 @media (max-width: 768px) {
-  .mini-menu{display: block !important;  margin: 0 10px !important;}
-  .menu .navbar{display: none !important;}
-  .selectnav{display: block !important;}
-  .menu{height: auto !important; padding-top: 5px !important;}
-  .navbar-nav{margin-bottom: 0 !important;}
-  .nav > li{background: #454855!important; margin-bottom: 5px !important; color: #fff !important; }
-  .nav > li:hover{background: #fff !important; }
-  .nav > li >a{padding: 12px !important;}
-  .nav > li >a:hover{color: #454855 !important;}
-  .navbar {display: block !important;}
-  .navbar-toggle {float: none !important; color: #fff !important; margin-right: 0 !important;}
-  .navbar-nav {display: block !important; margin-top: 0 !important;}
-  .header-wrapper {padding: 30px 0 !important;}
-  .banner .carousel-caption h1 {font-size: 40px !important; padding-bottom: 10px !important; margin: 0 !important;}
-  .banner .carousel-caption h2 {font-size: 18px !important; padding-bottom: 10px !important; line-height: 26px !important;}
-  .banner .carousel-caption {top: 0 !important;}  
-  .banner .carousel-caption .btn {font-size: 12px !important; padding: 5px 15px !important; line-height: 20px !important;}
-  .banner .carousel-control {top: 41% !important; font-size: 20px !important; width: 30px !important; height: 30px !important; line-height: 32px !important;}
-  .banner .carousel-control.right {right: 5% !important;}
-  .banner .carousel-control.left{left: 5% !important;}
-  .featured-item {padding: 30px 0 !important; padding-bottom: 0 !important;}
-  .featured-item .block{margin-bottom: 30px !important;}
-  .featured-item .block .block-title {padding-bottom: 20px !important;}
-  .featured-item .block .block-title h1 {font-size: 18px !important; line-height: 24px !important;}
-  .featured-item .block .block-title h2{font-size: 14px !important; line-height: 20px !important;}
-  .user-info h1 {font-size: 16px !important;}
-  .featured-content {padding: 30px 0 !important; padding-bottom: 0 !important;}
-  .featured-content .block{margin-bottom: 30px !important;}
-  .site-content {padding: 30px !important; padding-bottom: 0 !important;}
-  .site-content .block{margin-bottom: 30px !important;}
-  .site-content .block h1 {padding-bottom: 5px !important;}
-  .site-content .block .input-group {margin-top: 20px !important;}
-  .site-content .block .social {margin-top: 20px !important;}
-  .copy-rights {padding: 30px 0 !important;}
+    .mini-menu {
+        display: block !important;
+        margin: 0 10px !important;
+    }
+    .menu .navbar {
+        display: none !important;
+    }
+    .selectnav {
+        display: block !important;
+    }
+    .menu {
+        height: auto !important;
+        padding-top: 5px !important;
+    }
+    .navbar-nav {
+        margin-bottom: 0 !important;
+    }
+    .nav>li {
+        background: #454855!important;
+        margin-bottom: 5px !important;
+        color: #fff !important;
+    }
+    .nav>li:hover {
+        background: #fff !important;
+    }
+    .nav>li>a {
+        padding: 12px !important;
+    }
+    .nav>li>a:hover {
+        color: #454855 !important;
+    }
+    .navbar {
+        display: block !important;
+    }
+    .navbar-toggle {
+        float: none !important;
+        color: #fff !important;
+        margin-right: 0 !important;
+    }
+    .navbar-nav {
+        display: block !important;
+        margin-top: 0 !important;
+    }
+    .header-wrapper {
+        padding: 30px 0 !important;
+    }
+    .banner .carousel-caption h1 {
+        font-size: 40px !important;
+        padding-bottom: 10px !important;
+        margin: 0 !important;
+    }
+    .banner .carousel-caption h2 {
+        font-size: 18px !important;
+        padding-bottom: 10px !important;
+        line-height: 26px !important;
+    }
+    .banner .carousel-caption {
+        top: 0 !important;
+    }
+    .banner .carousel-caption .btn {
+        font-size: 12px !important;
+        padding: 5px 15px !important;
+        line-height: 20px !important;
+    }
+    .banner .carousel-control {
+        top: 41% !important;
+        font-size: 20px !important;
+        width: 30px !important;
+        height: 30px !important;
+        line-height: 32px !important;
+    }
+    .banner .carousel-control.right {
+        right: 5% !important;
+    }
+    .banner .carousel-control.left {
+        left: 5% !important;
+    }
+    .featured-item {
+        padding: 30px 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .featured-item .block {
+        margin-bottom: 30px !important;
+    }
+    .featured-item .block .block-title {
+        padding-bottom: 20px !important;
+    }
+    .featured-item .block .block-title h1 {
+        font-size: 18px !important;
+        line-height: 24px !important;
+    }
+    .featured-item .block .block-title h2 {
+        font-size: 14px !important;
+        line-height: 20px !important;
+    }
+    .user-info h1 {
+        font-size: 16px !important;
+    }
+    .featured-content {
+        padding: 30px 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .featured-content .block {
+        margin-bottom: 30px !important;
+    }
+    .site-content {
+        padding: 30px !important;
+        padding-bottom: 0 !important;
+    }
+    .site-content .block {
+        margin-bottom: 30px !important;
+    }
+    .site-content .block h1 {
+        padding-bottom: 5px !important;
+    }
+    .site-content .block .input-group {
+        margin-top: 20px !important;
+    }
+    .site-content .block .social {
+        margin-top: 20px !important;
+    }
+    .copy-rights {
+        padding: 30px 0 !important;
+    }
 }

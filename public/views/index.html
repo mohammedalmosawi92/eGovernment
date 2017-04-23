@@ -42,8 +42,9 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="#/signup">تسجيل</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#login-modal">تسجيل الدخول</a></li>
                         <li><a href="#/confirm">من نحن</a></li>
-                        <li><a href="#/personInfo">تسجيل الدخول</a></li>
+                        <li><a href="#/personInfo">معلومات الشخصية</a></li>
                         <li><a href="#">الخدمات</a></li>
                         <li><a href="#/home" style="text-align: center">الصفحة الرئيسية</a></li>
                     </ul>
@@ -67,6 +68,21 @@
           </label>
         </div>
     </div>
+    
+    <!--  login Modal  -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="loginmodal-container">
+                <h1>تسجيل الدخول</h1><br>
+                <form class="login-form">
+                    <input type="text" name="user" placeholder="أسم المستخدم">
+                    <input type="password" name="pass" placeholder="كلمة المرور">
+                    <input type="submit" name="login" class="login loginmodal-submit" value="دخول">
+                </form>
+            </div>
+        </div>
+    </div>
+    
     <ng-view></ng-view>
 
     <div class="footer-wrapper">
@@ -98,7 +114,7 @@
                             <li><a href="#">الشكاوى</a></li>
                         </ul>
                     </div>
-                    
+
                     <div class="block col-sm-3">
                         <h1> يمكنكم متابعتنا على مواقع التواصل الاجتماعي</h1>
                         <ul class="social">
