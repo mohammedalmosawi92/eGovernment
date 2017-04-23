@@ -8,9 +8,17 @@ app.config(function ($routeProvider) {
 })
 
 app.controller("confirmCtrl", function ($scope, tempService, requestService) {
+    
     $scope.loadData = function () {
         tempService.getData().then(function (response) {
             $scope.list = response.data.data;
+            $scope.list.map(function(item) {
+                item.edit = false;
+                var da = new Date(item.dob);
+                item.dob = da;
+                return item
+            });
+            console.log($scope.list);
         }, function (response) {
             console.log(response.status);
         })
@@ -31,6 +39,17 @@ app.controller("confirmCtrl", function ($scope, tempService, requestService) {
     $scope.deleteItem = function(id) {
         tempService.deleteData(id).then(function() {
             $scope.loadData()
+        })
+    }
+    
+    $scope.edit = function(index) {
+        $scope.list[index].edit = !$scope.list[index].edit;
+    }
+    
+    $scope.save = function(index, data, id) {
+        $scope.list[index].edit = !$scope.list[index].edit;
+        tempService.updateData(id, data).then(function() {
+            $scope.loadData();
         })
     }
 })

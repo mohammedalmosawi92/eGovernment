@@ -1,90 +1,187 @@
 <div class="confirm-page">
     <div class="container" ng-init="loadData()">
         <div ng-repeat="item in list">
-            <div class="row">
+            <div class="row" ng-if="!item.edit">
                 <div class="col-md-12">
                     <div class="item-name">
-                        First Name: {{item.firstName}}
+                        الاسم الاول: {{item.firstName}}
                     </div>
                 </div>
             </div>
-            <div class="row">
+
+            <div class="row" ng-if="!item.edit">
                 <div class="col-sm-4">
                     <div class="item-info">
-                        last Name: {{item.lastName}}
+                        الشهرة: {{item.lastName}}
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="item-info">
-                        Father Name: {{item.fatherName}}
+                        اسم الاب: {{item.fatherName}}
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="item-info">
-                        ID Number: {{item.idNumber}}
+                        رقم الهوية: {{item.idNumber}}
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="item-info">
-                        Sex: {{item.sex}}
+                        الجنس: {{item.sex}}
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="item-info">
-                        Date of Birth: {{item.dob | date : "dd-MM-yyyy"}}
+                        تاريخ الميلاد: {{item.dob | date:'MM/dd/yyyy'}}
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="item-info">
-                        Place of Birth: {{item.placeOfBirth}}
+                        مكان الميلاد: {{item.placeOfBirth}}
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="item-info">
-                        Mother name: {{item.motherName}}
+                        اسم الام: {{item.motherName}}
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="item-info">
-                        Status: {{item.status}}
+                        الحالة: {{item.status}}
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="item-info">
-                        Religion: {{item.religion}}
+                        الديانة: {{item.religion}}
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="item-info">
-                        Registration Num: {{item.RegistrationNum}}
+                        رقم القيد: {{item.RegistrationNum}}
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="item-info">
-                        Registration Place: {{item.RegistrationPlace}}
+                        مكان القيد: {{item.RegistrationPlace}}
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="item-info">
-                        Cell Phone: {{item.cellPhone}}
+                        رقم الهاتف الخيلوي: {{item.cellPhone}}
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="item-info">
-                        Phone: {{item.phone}}
+                        رقم الهاتف: {{item.phone}}
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="item-info">
-                        Address: {{item.address}}
+                        عنوان السكن: {{item.address}}
                     </div>
                 </div>
             </div>
-            <div class="row text-center">
-                <div class="col-md-12">
-                    <button class="btn btn-info" ng-click="confirmData(item, $index)">Confirm</button>
-                    
-                    <button class="btn btn-danger" ng-click="deleteItem(item._id)">Remove</button>
+
+            <div class="row" ng-if="item.edit">
+                <div class="col-md-4 col-md-offset-8">
+                    <div class="confirm-input-row">
+                        <input type="text" class="form-control" placeholder="" ng-model="item.firstName">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" ng-if="item.edit">
+                <div class="col-md-4">
+                    <div class="confirm-input-row">
+                        <input type="text" class="form-control" ng-model="item.lastName">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="confirm-input-row">
+                        <input type="text" class="form-control" ng-model="item.fatherName">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="confirm-input-row">
+                        <input type="number" class="form-control" ng-model="item.idNumber">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="confirm-input-row">
+                        <select class="form-control" ng-model="item.sex">
+                        <option value="male">ذكر</option>
+                        <option value="female">أنثى</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="confirm-input-row">
+                        <input class="form-control" ng-model="item.dob" type="date">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="confirm-input-row">
+                        <input type="text" class="form-control" ng-model="item.placeOfBirth">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="confirm-input-row">
+                        <input type="text" class="form-control" ng-model="item.motherName">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="confirm-input-row">
+                        <select ng-model="item.status" class="form-control">
+                        <option value="single">اعزب</option>
+                        <option value="married">متزوج/ة</option>
+                        <option value="divorced" ng-if="item.sex === 'female'">مطلق/ة</option>
+                        <option value="widow" ng-if="item.sex === 'female'">ارملة</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="confirm-input-row">
+                        <input type="text" class="form-control" ng-model="item.religion">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="confirm-input-row">
+                        <input type="number" class="form-control" ng-model="item.RegistrationNum">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="confirm-input-row">
+                        <input type="text" class="form-control" ng-model="item.RegistrationPlace">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="confirm-input-row">
+                        <input type="number" class="form-control" ng-model="item.cellPhone">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="confirm-input-row">
+                        <input type="number" class="form-control" ng-model="item.phone">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="confirm-input-row">
+                        <input type="text" class="form-control" ng-model="item.address">
+                    </div>
+                </div>
+            </div>
+            <div class="confirm-btn">
+                <div class="row text-center">
+                    <div class="col-md-12">
+
+                        <button class="btn btn-info" ng-click="confirmData(item, $index)">اضافة</button>
+
+                        <button class="btn btn-success" ng-click="edit($index)" ng-if="!item.edit">تعديل</button>
+
+                        <button class="btn btn-success" ng-click="save($index, item, item._id)" ng-if="item.edit">حفظ</button>
+
+                        <button class="btn btn-danger" ng-click="deleteItem(item._id)">حذف</button>
+                    </div>
                 </div>
             </div>
         </div>

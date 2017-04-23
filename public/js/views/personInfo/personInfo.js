@@ -9,6 +9,7 @@ app.config(function ($routeProvider) {
 
 app.controller("personInfoCtrl", function ($scope, tempService, $location, idService, idNumberService, tokenService, privService, usernameService) {
     $scope.personInfo = {};
+    $scope.personInfo.dob = new Date();
     $scope.personInfo.username = usernameService.getUsername();
     $scope.personInfo.idNumber = Number(idNumberService.getId());
     $scope.personInfo.status = "single";

@@ -655,7 +655,16 @@ body {
 .confirm-page {
     margin-top: 50px;
     margin-bottom: 50px;
+    direction: rtl;
 }
+
+.confirm-btn {
+    margin-top: 20px;
+}
+
+.confirm-btn button {
+    font-size: 20px;
+} 
 
 .item-name {
     font-size: 30px;
@@ -665,7 +674,25 @@ body {
 .item-info {
     font-size: 20px;
     font-family: "Cairo";
+    direction: rtl;
 }
+
+.confirm-input-row {
+    margin-bottom: 10px;
+}
+
+.confirm-input-row input {
+    font-family: "Cairo";
+    font-size: 20px;
+}
+
+.confirm-input-row select {
+    font-size: 18px;
+}
+
+/************************************************
+	login modal starts here
+ ************************************************/
 
 .login-form {
     direction: rtl;
