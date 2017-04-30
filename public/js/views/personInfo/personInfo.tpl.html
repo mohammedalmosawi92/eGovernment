@@ -88,7 +88,7 @@
                     <label>الرجاء تحميل الصورة الشمسية</label>
                 </div>
                 <div class="col-md-3">
-                    <input type="file" class="form-control personInfo-input" placeholder="صورة الهوية" ng-model="personInfo.idImage">
+                    <input type="file" class="form-control personInfo-input" placeholder="صورة الهوية" ng-model="personInfo.idImage" onchange="angular.element(this).scope().fileNameChanged(this)">
                 </div>
                 <div class="col-md-3">
                     <label>الرجاء تحميل صورة الهوية</label>

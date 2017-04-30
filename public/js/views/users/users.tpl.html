@@ -1,0 +1,148 @@
+<div class="users-page" ng-init="loadData()">
+    <div class="container">
+        <div class="admin-list">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h2>Admin List</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>#</th>
+                                <th class="text-center">
+                                    Username
+                                </th>
+                                <th class="text-center">
+                                    Privilege
+                                </th>
+                                <th class="text-center">
+                                    Delete
+                                </th>
+                                <th class="text-center">
+                                    Update
+                                </th>
+                            </tr>
+                            <tbody ng-repeat="admin in adminList">
+                                <tr>
+                                    <th class="text-center">
+                                        {{$index + 1}}
+                                    </th>
+                                    <th class="text-center">
+                                        {{admin.username}}
+                                    </th>
+                                    <th class="text-center" ng-if="!admin.edit">
+                                        {{admin.privilege}}
+                                    </th>
+                                    <th class="text-center" ng-if="admin.edit">
+                                        <select class="form-control" ng-model="admin.privilege">
+                                            <option value="admin">Admin</option>
+                                            <option value="user">User</option>
+                                        </select>
+                                    </th>
+                                    <th class="text-center">
+                                        <button class="btn btn-danger btn-sm" ng-click="deleteUser(admin._id)">
+                                            <i class="glyphicon glyphicon-trash"></i>
+                                        </button>
+                                    </th>
+                                    <th class="text-center" ng-if="!admin.edit">
+                                        <button class="btn btn-success btn-sm" ng-click="editAdmin(admin._id)">
+                                            <i class="glyphicon glyphicon-pencil"></i>
+                                        </button>
+                                    </th>
+                                    <th class="text-center" ng-if="admin.edit">
+                                        <button class="btn btn-success btn-sm" ng-click="updateAdmin(admin._id, admin.privilege)">
+                                            <i class="glyphicon glyphicon-ok"></i>
+                                        </button>
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="user-list">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h2>Users List</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th class="text-center">
+                                    #
+                                </th>
+                                <th class="text-center" ng-click="username()">
+                                    Username
+                                </th>
+                                <th class="text-center">
+                                    Privilege
+                                </th>
+                                <th class="text-center" ng-click="status()">
+                                    Status
+                                </th>
+                                <th class="text-center" ng-click="sortByReqNum()">
+                                    Number of requests
+                                </th>
+                                <th class="text-center">
+                                    Delete
+                                </th>
+                                <th class="text-center">
+                                    Update
+                                </th>
+                            </tr>
+                            <tbody ng-repeat="user in usersList | orderBy: sortUsers: order">
+                                <tr>
+                                    <th class="text-center">
+                                        {{$index + 1}}
+                                    </th>
+                                    <th class="text-center">
+                                        <a href="#/userInfo/{{user._id}}">
+                                            {{user.username}}
+                                        </a>
+                                    </th>
+                                    <th class="text-center" ng-if="!user.edit">
+                                        {{user.privilege}}
+                                    </th>
+                                    <th class="text-center" ng-if="user.edit">
+                                        <select class="form-control" ng-model="user.privilege">
+                                            <option value="admin">Admin</option>
+                                            <option value="user">User</option>
+                                        </select>
+                                    </th>
+                                    <th class="text-center">
+                                        {{user.status}}
+                                    </th>
+                                    <th class="text-center">
+                                        {{user.requests.length}}
+                                    </th>
+                                    <th class="text-center">
+                                        <button class="btn btn-danger btn-sm" ng-click="deleteUser(user._id)">
+                                            <i class="glyphicon glyphicon-trash"></i>
+                                        </button>
+                                    </th>
+                                    <th class="text-center" ng-if="!user.edit">
+                                        <button class="btn btn-success btn-sm" ng-click="editUser(user._id)">
+                                            <i class="glyphicon glyphicon-pencil"></i>
+                                        </button>
+                                    </th>
+                                    <th class="text-center" ng-if="user.edit">
+                                        <button class="btn btn-success btn-sm" ng-click="updateUser(user._id, user.privilege)">
+                                            <i class="glyphicon glyphicon-ok"></i>
+                                        </button>
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

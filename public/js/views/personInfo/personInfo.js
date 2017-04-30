@@ -22,6 +22,10 @@ app.controller("personInfoCtrl", function ($scope, tempService, $location, idSer
     $scope.personInfo.status = "اعزب";
     $scope.personInfo.sex = "ذكر";
     
+    $scope.fileNameChanged = function(file) {
+        $scope.personInfo.personalImage = file.value
+    }
+    
     $scope.loadData = function() {
         console.log($scope.personInfo)
         tempService.getDataByIdNumber($scope.personInfo.idNumber).then(function(response) {
@@ -40,15 +44,19 @@ app.controller("personInfoCtrl", function ($scope, tempService, $location, idSer
         })
     }
     
-    $scope.submit = function () {
-        tempService.postData($scope.personInfo).then(function (response) {
-            console.log("from temp")
-            usersService.updateStatus(id,"waiting").then(function() {
-                statusService.setStatus("waiting");
-                $location.path("/signIn");
-            })
-        }, function (response) {
-            console.log(response.status);
-        });
+    $scope.submit = function() {
+        console.log($scope.personInfo);
     }
+    
+//    $scope.submit = function () {
+//        tempService.postData($scope.personInfo).then(function (response) {
+//            console.log("from temp")
+//            usersService.updateStatus(id,"waiting").then(function() {
+//                statusService.setStatus("waiting");
+//                $location.path("/signIn");
+//            })
+//        }, function (response) {
+//            console.log(response.status);
+//        });
+//    }
 });
