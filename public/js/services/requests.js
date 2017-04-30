@@ -6,7 +6,6 @@ app.service("requestService", function($http) {
     }
     
     this.getDataByIdNumber = function(idNumber) {
-        console.log(idNumber)
         return $http.get("http://localhost:8080/personal/" + idNumber);
     }
     

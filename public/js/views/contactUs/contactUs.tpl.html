@@ -24,8 +24,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <h3>
-                                    01/754200<br>01/751601<br>01/751602 
-                               </h3>
+                                    01/754200<br>01/751601<br>01/751602
+                                </h3>
                             </div>
                             <div class="col-md-6">
                                 <h3> رقم الهاتف : </h3>
@@ -60,25 +60,38 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="shakawa">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1> للشكاوى :</h1>
+    <form name="myForm">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="shakawa">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1> للاقتراحات او الشكاوى :</h1>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <textarea type="text" placeholder="الرجاء كتابة الشكوى هنا"></textarea>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <textarea placeholder="الرجاء كتابة الاقتراحات او الشكاوى هنا" class="form-control" required ng-model="complain" rows="7"></textarea>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <button type="button" class="btn btn-info" ng-click="send()" ng-disabled="myForm.$invalid">ارسال</button>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-info" ng-disabled="myForm.$invalid" ng-click="send()">ارسال</button>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </form>
+    <div class="row text-right" ng-if="success">
+        <div class="col-md-12">
+            <h2>تم ارسال اقتراحكم بنجاح</h2>
+        </div>
+    </div>
+    <div class="row text-right" ng-if="fail">
+        <div class="col-md-12">
+            <h2>لقد قمت بارسال اقتراح مسبقا</h2>
+            <h2>الرجاء الانتظار حتى يتم النظر في اقتراحكم ثم يمكنكم اضافة طلب اخر</h2>
         </div>
     </div>
 </div>

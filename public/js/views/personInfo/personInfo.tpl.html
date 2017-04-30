@@ -1,11 +1,16 @@
-<div class="personInfo-page">
+<div class="personInfo-page" ng-if="status() === 'noData' || status() === 'notAccepted'">
     <form name="myForm">
         <div class="container">
-           <div class="row">
-               <div class="col-md-12">
-                   <h1></h1>
-               </div>
-           </div>
+            <div class="row" ng-if="status() === 'noData'">
+                <div class="col-md-12">
+                    <h1></h1>
+                </div>
+            </div>
+            <div class="row" ng-if="status() === 'notAccepted'">
+                <div class="col-md-12">
+                    <h1>تم رفض المعلومات التي قمت بتقديمها الرجاء اعادة تعبئة معلوماتك الشخصية من جديد</h1>
+                </div>
+            </div>
             <div class="personInfo-row">
                 <div class="row">
                     <div class="col-md-3">
@@ -47,8 +52,8 @@
                         <select ng-model="personInfo.status" class="form-control">
                             <option value="اعزب"> اعزب </option>
                             <option value="متزوج/ة"> متزوج/ة</option>
-                            <option value="divorced" ng-if="personInfo.sex === 'انثى'"> مطلق/ة</option>
-                            <option value="widow" ng-if="personInfo.sex === 'انثى'"> ارملة </option>
+                            <option value="مطلقة" ng-if="personInfo.sex === 'انثى'"> مطلقة</option>
+                            <option value="ارملة" ng-if="personInfo.sex === 'انثى'"> ارملة </option>
                         </select>
                     </div>
                     <div class="col-md-3">
@@ -98,4 +103,191 @@
             </div>
         </div>
     </form>
+</div>
+
+<!-- if the user submitted a data but the admin hasn't confirmed the data yet -->
+<div class="personInfo-page" ng-if="status() === 'waiting'" ng-init="loadData()">
+    <form name="myForm">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>يتم حاليا التاكد من البيانات التي قمت بارسالها الرجاء الانتظار</h1>
+                </div>
+            </div>
+            <div class="personInfo-row">
+                <div class="row">
+                    <div class="col-md-3">
+                        <input type="text" class="form-control personInfo-input" placeholder="الشهرة" ng-model="personInfo.lastName" readonly>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control personInfo-input" placeholder="اسم الأب" ng-model="personInfo.fatherName" readonly>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control personInfo-input" placeholder="الاسم الأول" ng-model="personInfo.firstName" readonly>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" class="form-control personInfo-input" placeholder="رقم الهوية" ng-model="personInfo.idNumber" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="personInfo-row">
+                <div class="row">
+                    <div class="col-md-3">
+                        <select ng-model="personInfo.sex" class="form-control" disabled>
+                            <option value="ذكر">ذكر</option>
+                            <option value="انثى">انثى</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="date" class="form-control personInfo-input" placeholder="تاريخ الميلاد" ng-model="personInfo.dob" readonly>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control personInfo-input" placeholder="مكان الولادة" ng-model="personInfo.placeOfBirth" readonly>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control personInfo-input" placeholder="اسم الأم و شهرتها" ng-model="personInfo.motherName" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="personInfo-row">
+                <div class="row">
+                    <div class="col-md-3">
+                        <select ng-model="personInfo.status" class="form-control" disabled>
+                            <option value="اعزب"> اعزب </option>
+                            <option value="متزوج/ة"> متزوج/ة</option>
+                            <option value="مطلقة" ng-if="personInfo.sex === 'انثى'"> مطلقة</option>
+                            <option value="ارملة" ng-if="personInfo.sex === 'انثى'"> ارملة </option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control personInfo-input" placeholder="المذهب" ng-model="personInfo.religion" readonly>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" class="form-control personInfo-input" placeholder="رقم القيد" ng-model="personInfo.RegistrationNum" readonly>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control personInfo-input" placeholder="مكان القيد" ng-model="personInfo.RegistrationPlace" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="personInfo-row">
+                <div class="row">
+                    <div class="col-md-4">
+                        <input type="text" class="form-control personInfo-input" placeholder="رقم الهاتف الخليوي" ng-model="personInfo.cellPhone" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control personInfo-input" placeholder="رقم الهاتف الأرضي" ng-model="personInfo.phone" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control personInfo-input" placeholder="عنوان السكن" ng-model="personInfo.address" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="personInfo-row">
+                <div class="col-md-3">
+                    <input type="file" class="form-control personInfo-input" placeholder="صورة شمسية" ng-model="personInfo.personalImage" readonly>
+                </div>
+                <div class="col-md-3">
+                    <label>الرجاء تحميل الصورة الشمسية</label>
+                </div>
+                <div class="col-md-3">
+                    <input type="file" class="form-control personInfo-input" placeholder="صورة الهوية" ng-model="personInfo.idImage" readonly>
+                </div>
+                <div class="col-md-3">
+                    <label>الرجاء تحميل صورة الهوية</label>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="personInfo-page" ng-if="status() === 'accepted'">
+    <div class="container" ng-init="loadInfo()">
+       <div class="row">
+           <div class="col-md-12">
+               <h1>بياناتك المسجله عندنا</h1>
+           </div>
+       </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="item-name">
+                    رقم الهوية: {{yourInfo.idNumber}}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="item-info">
+                    الشهرة: {{yourInfo.lastName}}
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="item-info">
+                    اسم الاب: {{yourInfo.fatherName}}
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="item-info">
+                    الاسم الاول: {{yourInfo.firstName}}
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="item-info">
+                    الجنس: {{yourInfo.sex}}
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="item-info">
+                    تاريخ الميلاد: {{yourInfo.dob | date:'MM/dd/yyyy'}}
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="item-info">
+                    مكان الميلاد: {{yourInfo.placeOfBirth}}
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="item-info">
+                    اسم الام: {{yourInfo.motherName}}
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="item-info">
+                    الحالة: {{yourInfo.status}}
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="item-info">
+                    المذهب: {{yourInfo.religion}}
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="item-info">
+                    رقم القيد: {{yourInfo.RegistrationNum}}
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="item-info">
+                    مكان القيد: {{yourInfo.RegistrationPlace}}
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="item-info">
+                    رقم الهاتف الخيلوي: {{yourInfo.cellPhone}}
+                </div>
+            </div>
+            <div class="col-sm-4 col-sm-offset-4">
+                <div class="item-info">
+                    رقم الهاتف: {{yourInfo.phone}}
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="item-info">
+                    عنوان السكن: {{yourInfo.address}}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

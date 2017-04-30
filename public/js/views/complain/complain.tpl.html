@@ -1,0 +1,26 @@
+<div class="complainPage" ng-init="loadData()">
+    <div class="container">
+       <div class="row text-center">
+           <div class="col-md-12">
+               <h1>لائحة بجميع الشكاوى والاقتراحات</h1>
+           </div>
+       </div>
+        <div class="row" ng-repeat="complain in list">
+            <div class="col-md-10">
+                <div class="complain">
+                    <span class="complain-num">{{$index + 1}}</span>
+                    <span class="complain-text">{{complain.complain}}</span>
+                    <span class="complain-username">{{complain.username}}</span>
+                    
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="complain-delete">
+                    <button class="btn btn-danger" ng-click="deleteComplain(complain._id)">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,6 +6,10 @@ var tempPersonalSchema = new Schema({
         type: String,
         unique: true
     },
+    userId: {
+        type: String,
+        unique: true
+    },
     firstName: {
         type: String,
        

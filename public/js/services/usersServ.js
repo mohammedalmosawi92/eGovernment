@@ -25,4 +25,9 @@ app.service("usersService", function($http) {
         return $http.put("http://localhost:8080/users/" + id + query);
     }
     
+    this.updateStatus = function(id, status) {
+        console.log(id, status);
+        return $http.put("http://localhost:8080/users/" + id + "/" + status);
+    }
+    
 })

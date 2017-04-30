@@ -2,8 +2,8 @@ var app = angular.module("usernameModule", []);
 
 app.service("usernameService", function () {
     
-    this.setUsername = function (id) {
-        localStorage["username"] = id;
+    this.setUsername = function (username) {
+        localStorage["username"] = username;
     };
     
     this.getUsername = function () {

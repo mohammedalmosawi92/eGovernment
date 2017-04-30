@@ -7,6 +7,30 @@ var usersRouter = express.Router();
 
 //import privileges
 var adminPriv = require("../Privilege/admin.js");
+var userAdminPriv = require("../Privilege/userAdminPriv.js");
+
+//only registered users can do this part
+usersRouter.use(userAdminPriv);
+
+//update the status
+usersRouter.put("/:id/:status", function(req, res) {
+    console.log(req.params.id)
+    console.log(req.params.status)
+    Users.findById(req.params.id, function(err, user) {
+        if(err) {
+            res.status(500).send({err: err})
+        }else {
+            user.status = req.params.status;
+            user.save(function(err, data) {
+                if(err) {
+                    res.status(500).send({err: err});
+                }else {
+                    res.status(200).send({message: "you have updated the status"})
+                }
+            })
+        }
+    })
+})
 
 //only admin can do the below requests
 usersRouter.use(adminPriv);
@@ -75,6 +99,8 @@ usersRouter.delete("/:id", function(req, res) {
 
 //update a specific user
 usersRouter.put("/:id", function(req, res) {
+    console.log(req.params.id)
+    console.log(req.query)
     Users.findById(req.params.id, function(err, data) {
         if(err) {
             res.status(500).send({err: err});

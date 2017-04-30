@@ -1,4 +1,4 @@
-var app = angular.module("app", ["ngRoute", "app.kayd", "app.hawiye", "app.sejel", "app.home", "app.passport", "app.personInfo", "app.confirm", "app.signup", "app.contactUs", "authModule", "idModule", "idNumberModule", "tokenModule", "privModule", "usernameModule", "statusModule"]);
+var app = angular.module("app", ["ngRoute", "app.kayd", "app.hawiye", "app.sejel", "app.home", "app.passport", "app.personInfo", "app.confirm", "app.signup", "app.contactUs", "authModule", "idModule", "idNumberModule", "tokenModule", "privModule", "usernameModule", "statusModule", "app.complain"]);
 
 app.config(function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix("");
@@ -38,14 +38,14 @@ app.config(["$httpProvider", function ($httpProvider) {
 }]);
 
 app.controller("ctrl", function ($scope, authService, $location, idService, idNumberService, tokenService, privService, usernameService, statusService) {
-
+    
     //to check if there is a user
     $scope.loginCheck = function () {
         return authService.isAuthenticated();
     };
 
     //to check the priv
-    $scope.chechUser = function () {
+    $scope.checkUser = function () {
         return privService.getPriv();
     };
 

@@ -5,12 +5,11 @@ app.service("tempService", function($http) {
         return $http.get("http://localhost:8080/temp/");
     }
     
-    this.getDataById = function(id) {
+    this.getDataByIdNumber = function(id) {
         return $http.get("http://localhost:8080/temp/" + id);
     }
     
     this.postData = function(data) {
-        console.log(data);
         return $http.post("http://localhost:8080/temp/", data);
     }
     

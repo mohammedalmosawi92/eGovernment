@@ -24,13 +24,9 @@ apiTempRouter.post("/", function (req, res) {
     })
 });
 
-
-//only admin can do the below requests
-apiTempRouter.use(adminPriv);
-
-//get all the personal info
-apiTempRouter.get("/", function (req, res) {
-    TempPersonal.find({}, function (err, data) {
+//get personal info by id
+apiTempRouter.get("/:idNumber", function (req, res) {
+    TempPersonal.findOne({idNumber: req.params.idNumber}, function (err, data) {
         if (err) {
             res.status(500).send({err: err});
         } else {
@@ -39,9 +35,13 @@ apiTempRouter.get("/", function (req, res) {
     })
 });
 
-//get personal info by id
-apiTempRouter.get("/:id", function (req, res) {
-    TempPersonal.findById(req.params.id, function (err, data) {
+
+//only admin can do the below requests
+apiTempRouter.use(adminPriv);
+
+//get all the personal info
+apiTempRouter.get("/", function (req, res) {
+    TempPersonal.find({}, function (err, data) {
         if (err) {
             res.status(500).send({err: err});
         } else {

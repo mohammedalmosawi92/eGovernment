@@ -23,17 +23,6 @@ apiRouter.get("/", function(req, res) {
 //only users can do the requests below
 apiRouter.use(userAdminPriv);
 
-//get personal info by id
-//apiRouter.get("/:id", function(req, res) {
-//    Personal.findById(req.params.id, function(err, data) {
-//        if(err) {
-//            res.status(500).send({err: err});
-//        }else {
-//            res.status(200).send({message: "success", data: data});
-//        }
-//    })
-//});
-
 //get personal info by id Number
 apiRouter.get("/:idNumber", function(req, res) {
     Personal.findOne({idNumber:req.params.idNumber}, function(err, data) {

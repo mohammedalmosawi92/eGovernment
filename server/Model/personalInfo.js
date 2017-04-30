@@ -5,6 +5,10 @@ var personalSchema = new Schema({
     firstName: {
         type: String,
     },
+    userId: {
+        type: String,
+        unique: true
+    },
     lastName: {
         type: String,
     },
