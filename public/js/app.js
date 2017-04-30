@@ -1,4 +1,4 @@
-var app = angular.module("app", ["ngRoute", "app.home", "app.personInfo", "app.confirm", "app.signup", "authModule", "idModule", "idNumberModule", "tokenModule", "privModule", "usernameModule"]);
+var app = angular.module("app", ["ngRoute", "app.kayd", "app.hawiye", "app.sejel", "app.home", "app.passport", "app.personInfo", "app.confirm", "app.signup", "app.contactUs", "authModule", "idModule", "idNumberModule", "tokenModule", "privModule", "usernameModule"]);
 
 app.config(function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix("");
@@ -18,7 +18,7 @@ app.service("AuthInterceptor", ["$q", "$location", "tokenService", function ($q,
         }
         return config;
     };
-    
+
     //to delete everything from the local storage in cast of an error
     this.responseError = function (response) {
         if (response.status === 401 || response.status === 500) {
@@ -37,20 +37,20 @@ app.config(["$httpProvider", function ($httpProvider) {
 }]);
 
 app.controller("ctrl", function ($scope, authService, $location, idService, idNumberService, tokenService, privService, usernameService) {
-    
+
     //to check if there is a user
     $scope.loginCheck = function () {
         return authService.isAuthenticated();
     };
-    
+
     //to check the priv
     $scope.chechUser = function () {
         return privService.getPriv();
     };
-    
+
     //to set an obj for userInput
     $scope.userInput = {};
-    
+
     //sign in
     $scope.signin = function () {
         $scope.userInput.idNumber = $scope.userInput.password;
@@ -74,7 +74,7 @@ app.controller("ctrl", function ($scope, authService, $location, idService, idNu
         idNumberService.removeId();
         tokenService.removeToken();
         privService.removePriv();
-        usernameService.removeUsername(response.data.username);
+        usernameService.removeUsername();
     };
-    
+
 })

@@ -55,7 +55,8 @@
                             </ul>
                         </li>
                         <li ng-if="chechUser() === 'user'"><a href="#/personInfo">معلومات الشخصية</a></li>
-                        <li ng-if="chechUser() === 'user'"><a href="#">الخدمات</a></li>
+                        <li ng-if="chechUser() === 'user'"><a href="#/contactUs"> للاتصال بنا
+                         </a></li>
                         <li><a href="#/home">الصفحة الرئيسية</a></li>
                     </ul>
                 </div>
@@ -63,7 +64,7 @@
                     <div class="navbar-collapse collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
                             <li><a href="#/home" style="text-align: center">الصفحة الرئيسية</a></li>
-                            <li ng-if="chechUser() === 'user'"><a href="#">الخدمات</a></li>
+                            <li ng-if="chechUser() === 'user'"><a href="#/contactUs"> للاتصال بنا </a></li>
                             <li ng-if="chechUser() === 'user'"><a href="#/personInfo">معلومات الشخصية</a></li>
                             <li class="dropdonw" ng-if="chechUser() === 'admin'">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -94,7 +95,7 @@
             <div class="loginmodal-container">
                 <h1>تسجيل الدخول</h1><br>
                 <form class="login-form" name="signinForm">
-                    <input type="text" name="user" placeholder="أسم المستخدم" required ng-model="userInput.username">
+                    <input type="text" name="user" placeholder="أسم المستخدم" required ng-model="userInput.username" autofocus>
                     <input type="password" name="pass" placeholder="كلمة المرور" required ng-model="userInput.password">
                     <button class="btn btn-primary" ng-disabled="signinForm.$invalid" data-toggle="modal" data-target="#login-modal" ng-click="signin()">دخول</button>
                 </form>
@@ -153,9 +154,14 @@
     <script src="/js/app.js"></script>
     <!--  Routes  -->
     <script src="/js/views/home/home.js"></script>
+    <script src="/js/views/contactUs/contactUs.js"></script>
     <script src="/js/views/personInfo/personInfo.js"></script>
     <script src="/js/views/signup/signup.js"></script>
     <script src="/js/views/confirm/confirm.js"></script>
+    <script src="/js/views/passport/passport.js"></script>
+    <script src="/js/views/kayd/kayd.js"></script>
+    <script src="/js/views/hawiye/hawiye.js"></script>
+    <script src="/js/views/sejel/sejel.js"></script>
 
     <!--  Services  -->
     <script src="/js/services/tempServ.js"></script>

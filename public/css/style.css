@@ -6,8 +6,6 @@
     box-sizing: border-box;
 }
 
-
-
 html,
 body {
     max-width: 100%;
@@ -38,7 +36,6 @@ body {
 
 .glyphicon-list {
     font-size: 30px;
-    
 }
 
 .site-name h1 {
@@ -221,6 +218,28 @@ body {
     left: 10%;
 }
 
+.taarif {
+    direction: rtl;
+    text-align: center;
+}
+
+.contact {
+    direction: rtl;
+    text-align: center;
+    color: #1A237E;
+}
+
+.shakawa {
+    direction: rtl;
+    text-align: center;
+    color: #1A237E;
+}
+
+textarea {
+    height: 200px;
+    width: 700px;
+}
+
 
 /*
 .banner .carousel-caption h1 {
@@ -300,7 +319,7 @@ body {
     border: 1px solid transparent;
     border-bottom: 2px solid black;
     border-radius: 0px;
-    background: yellow;
+    background: white;
 }
 
 
@@ -366,7 +385,6 @@ body {
 
 .input-btn {
     margin-top: 30px;
-    
 }
 
 .input-btn .btn-primary {
@@ -664,7 +682,7 @@ body {
 
 .confirm-btn button {
     font-size: 20px;
-} 
+}
 
 .item-name {
     font-size: 30px;
@@ -689,6 +707,7 @@ body {
 .confirm-input-row select {
     font-size: 18px;
 }
+
 
 /************************************************
 	login modal starts here
@@ -798,11 +817,11 @@ input[type=password]:hover {
     font-size: 20px;
 }
 
-.loginmodal-container h4 a{
+.loginmodal-container h4 a {
     color: blue;
 }
 
-.loginmodal-container h4 a:hover{
+.loginmodal-container h4 a:hover {
     text-decoration: underline;
 }
 
@@ -842,14 +861,14 @@ input[type=password]:hover {
 */
 
 .collapse-menu {
-        display: none !important;
+    display: none !important;
 }
+
 @media (max-width: 768px) {
     .mini-menu {
         display: block !important;
         margin: 0 10px !important;
     }
-    
     .collapse-menu {
         display: block !important;
     }

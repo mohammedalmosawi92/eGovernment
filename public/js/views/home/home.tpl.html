@@ -6,14 +6,28 @@
                 <div class="carousel-caption">
                     <h1> جواز السفر اللبناني </h1>
                     <h3>يمكنك الان ان تحصل او تجدد جواز سفرك عبر موقعنا</h3>
-                    <a href="#" class="btn">اضغط هنا</a>
+                    <a ng-if="privilege() ==='user'" href="#/passport" class="btn">اضغط هنا</a>
                 </div>
             </div>
             <div class="item second-item">
                 <div class="carousel-caption">
                     <h1>اخراج قيد</h1>
                     <h3>يمكنكم الحصول على اخراج قيد عن طريق موقعنا</h3>
-                    <a href="#" class="btn">اضغط هنا</a>
+                    <a ng-if="privilege() ==='user'" href="#/kayd" class="btn">اضغط هنا</a>
+                </div>
+            </div>
+            <div class="item third-item">
+                <div class="carousel-caption">
+                    <h1> سجل عدلي</h1>
+                    <h3>يمكنكم الحصول على السجل العدلي عن طريق موقعنا</h3>
+                    <a ng-if="privilege() ==='user'" href="#/sejel" class="btn">اضغط هنا</a>
+                </div>
+            </div>
+            <div class="item fourth-item">
+                <div class="carousel-caption">
+                    <h1>هوية لبنانية</h1>
+                    <h3>يمكنكم الحصول على الهوية عن طريق موقعنا</h3>
+                    <a ng-if="privilege() ==='user'" href="#/hawiye" class="btn">اضغط هنا</a>
                 </div>
             </div>
             <!-- Left and right controls -->
@@ -23,6 +37,14 @@
             <span class="right carousel-control" href="#myCarousel" data-slide="next">
                 <i class="glyphicon glyphicon-arrow-right"></i>
             </span>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="taarif"> تعلن وزارة الداخليّة و البلديّات عن انشاء موقعها الألكتروني الرسمي و ذلك لتسهيل حصول المواطن على أوراقه الرسمية التي يريد عبر طلبها أون لاين و من ثم يقوم موظفونا بتوصيلها الى المكان الذي  يريد ما عليك سوى انشاء حسابك الخاص
+            .</h1>
         </div>
     </div>
 </div>
@@ -93,50 +115,40 @@
         <div class="col-md-6">
             <div class="block">
                 <div class="block-title">
-                    <h1>الخدمات التي نقدمها</h1>
-                    <h2>موقعنا يقدم العديد من الخدمات ومن ابرزها</h2>
+                    <h1>موقعنا يقدم العديد من الخدمات ومن ابرزها</h1>
                 </div>
                 <div>
-                    <div class="col-md-6">
-                        <div class="user-info">
-                            <i class="glyphicon glyphicon-ok icon"></i>
-                            <h1>جواز سفر</h1>
-                            <p>Cuibstui ipsum dolor sit amet, consectetu</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="user-info">
+                                <i class="glyphicon glyphicon-ok icon"></i>
+                                <h1>اخراج قيد</h1>
+                                <p>يمكنك أن تحصل على القيد الفردي الخاص بك أو لولدك في حال كان عمره دون 18 سنة </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="user-info">
+                                <i class="glyphicon glyphicon-ok icon"></i>
+
+                                <h1>جواز سفر</h1>
+                                <p>يمكنك أن تحصل على جوزك اللبناني الخاص بك عبر موقعنا</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="user-info">
-                            <i class="glyphicon glyphicon-ok icon"></i>
-                            <h1>اخراج قيد</h1>
-                            <p>Phasellus ultrices nulla quis nibh lorem</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="user-info">
+                                <i class="glyphicon glyphicon-ok icon"></i>
+                                <h1>سجل عدلي</h1>
+                                <p>يمكنك أن تحصل على السجل العدلي الخاص بك عبر موقعنا</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="user-info">
-                            <i class="glyphicon glyphicon-ok icon"></i>
-                            <h1>Phas ellus</h1>
-                            <p>Aliquam erat volutpat. Nam dui mi, tinci</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="user-info">
-                            <i class="glyphicon glyphicon-ok icon"></i>
-                            <h1>Fusce lobortis</h1>
-                            <p>Class aptent taciti sociosqu ad litora</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="user-info">
-                            <i class="glyphicon glyphicon-ok icon"></i>
-                            <h1>Sed adipiscing</h1>
-                            <p class="last space">Praesent dapibus, neque id cursus</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="user-info">
-                            <i class="glyphicon glyphicon-ok icon"></i>
-                            <h1>Nam convallis</h1>
-                            <p class="last">Lorem ipsum dolor sit amet, consectetuer </p>
+                        <div class="col-md-6">
+                            <div class="user-info">
+                                <i class="glyphicon glyphicon-ok icon"></i>
+                                <h1>الهوية اللبنانية</h1>
+                                <p>يمكنك أن تحصل على هويتك اللبنانية الخاص بك عبر موقعنا</p>
+                            </div>
                         </div>
                     </div>
                 </div>

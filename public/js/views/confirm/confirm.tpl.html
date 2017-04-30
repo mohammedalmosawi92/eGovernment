@@ -4,7 +4,8 @@
             <div class="row" ng-if="!item.edit">
                 <div class="col-md-12">
                     <div class="item-name">
-                        الاسم الاول: {{item.firstName}}
+                        رقم الهوية: {{item.idNumber}}
+
                     </div>
                 </div>
             </div>
@@ -22,7 +23,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="item-info">
-                        رقم الهوية: {{item.idNumber}}
+                        الاسم الاول: {{item.firstName}}
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -52,7 +53,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="item-info">
-                        الديانة: {{item.religion}}
+                        المذهب: {{item.religion}}
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -70,7 +71,7 @@
                         رقم الهاتف الخيلوي: {{item.cellPhone}}
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-sm-offset-4">
                     <div class="item-info">
                         رقم الهاتف: {{item.phone}}
                     </div>
@@ -85,7 +86,8 @@
             <div class="row" ng-if="item.edit">
                 <div class="col-md-4 col-md-offset-8">
                     <div class="confirm-input-row">
-                        <input type="text" class="form-control" placeholder="" ng-model="item.firstName">
+                        <input type="number" class="form-control" ng-model="item.idNumber" placeholder="رفم الهوية">
+
                     </div>
                 </div>
             </div>
@@ -93,25 +95,25 @@
             <div class="row" ng-if="item.edit">
                 <div class="col-md-4">
                     <div class="confirm-input-row">
-                        <input type="text" class="form-control" ng-model="item.lastName">
+                        <input type="text" class="form-control" ng-model="item.lastName" placeholder="الشهرة">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="confirm-input-row">
-                        <input type="text" class="form-control" ng-model="item.fatherName">
+                        <input type="text" class="form-control" ng-model="item.fatherName" placeholder="اسم الاب">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="confirm-input-row">
-                        <input type="number" class="form-control" ng-model="item.idNumber">
+                        <input type="text" class="form-control" placeholder="الاسم الأول" ng-model="item.firstName">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="confirm-input-row">
                         <select class="form-control" ng-model="item.sex">
-                        <option value="male">ذكر</option>
-                        <option value="female">أنثى</option>
-                    </select>
+                            <option value="male">ذكر</option>
+                            <option value="female">أنثى</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -121,52 +123,52 @@
                 </div>
                 <div class="col-md-4">
                     <div class="confirm-input-row">
-                        <input type="text" class="form-control" ng-model="item.placeOfBirth">
+                        <input type="text" class="form-control" ng-model="item.placeOfBirth" placeholder="مكان الميلاد">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="confirm-input-row">
-                        <input type="text" class="form-control" ng-model="item.motherName">
+                        <input type="text" class="form-control" ng-model="item.motherName" placeholder="اسم الأم">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="confirm-input-row">
                         <select ng-model="item.status" class="form-control">
-                        <option value="single">اعزب</option>
-                        <option value="married">متزوج/ة</option>
-                        <option value="divorced" ng-if="item.sex === 'female'">مطلق/ة</option>
-                        <option value="widow" ng-if="item.sex === 'female'">ارملة</option>
-                    </select>
+                            <option value="single">اعزب</option>
+                            <option value="married">متزوج/ة</option>
+                            <option value="divorced" ng-if="item.sex === 'female'">مطلق/ة</option>
+                            <option value="widow" ng-if="item.sex === 'female'">ارملة</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="confirm-input-row">
-                        <input type="text" class="form-control" ng-model="item.religion">
+                        <input type="text" class="form-control" ng-model="item.religion" placeholder="المذهب">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="confirm-input-row">
-                        <input type="number" class="form-control" ng-model="item.RegistrationNum">
+                        <input type="number" class="form-control" ng-model="item.RegistrationNum" placeholder="رقم القيد">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="confirm-input-row">
-                        <input type="text" class="form-control" ng-model="item.RegistrationPlace">
+                        <input type="text" class="form-control" ng-model="item.RegistrationPlace" placeholder="مكان السجل">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="confirm-input-row">
-                        <input type="number" class="form-control" ng-model="item.cellPhone">
+                        <input type="number" class="form-control" ng-model="item.cellPhone" placeholder=" رقم الهاتف الخليوي">
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="confirm-input-row">
+                        <input type="number" class="form-control" ng-model="item.phone" placeholder="رقم الهاتف الأرضي">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="confirm-input-row">
-                        <input type="number" class="form-control" ng-model="item.phone">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="confirm-input-row">
-                        <input type="text" class="form-control" ng-model="item.address">
+                        <input type="text" class="form-control" ng-model="item.address" placeholder="عنوان السكن">
                     </div>
                 </div>
             </div>

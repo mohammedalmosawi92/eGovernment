@@ -9,6 +9,7 @@ app.config(function ($routeProvider) {
 
 app.controller("signupCtrl", function($scope, authService, $location) {
     $scope.user = {};
+    //$scope.user.privilege = "admin";
     $scope.notMatch = false;
     $scope.signup = function() {
         if($scope.user.password != $scope.user.confirmPassword) {

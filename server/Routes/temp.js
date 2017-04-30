@@ -14,7 +14,6 @@ apiTempRouter.use(userAdminPriv);
 
 //add new personal info
 apiTempRouter.post("/", function (req, res) {
-    console.log(req.body);
     var newTempPersonal = new TempPersonal(req.body);
     newTempPersonal.save(function (err, data) {
         if (err) {
