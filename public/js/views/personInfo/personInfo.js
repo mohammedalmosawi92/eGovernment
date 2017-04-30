@@ -22,8 +22,16 @@ app.controller("personInfoCtrl", function ($scope, tempService, $location, idSer
     $scope.personInfo.status = "اعزب";
     $scope.personInfo.sex = "ذكر";
     
+    $scope.personalImage = function(file) {
+        $scope.personInfo.personalImage = file.value.split("fakepath\\")[1];
+    }
+    
+    $scope.idImage = function(file) {
+        $scope.personInfo.idImage = file.value.split("fakepath\\")[1];
+    }
+    
     $scope.fileNameChanged = function(file) {
-        $scope.personInfo.personalImage = file.value
+        $scope.personInfo.personalImage = file.value.split("fakepath\\")[1];
     }
     
     $scope.loadData = function() {
@@ -39,24 +47,19 @@ app.controller("personInfoCtrl", function ($scope, tempService, $location, idSer
     
     $scope.loadInfo = function() {
         requestService.getDataByIdNumber(idNumber).then(function(response) {
-            console.log("hello")
             $scope.yourInfo = response.data.data;
         })
     }
     
-    $scope.submit = function() {
-        console.log($scope.personInfo);
+    $scope.submit = function () {
+        tempService.postData($scope.personInfo).then(function (response) {
+            console.log("from temp")
+            usersService.updateStatus(id,"waiting").then(function() {
+                statusService.setStatus("waiting");
+                $location.path("/signIn");
+            })
+        }, function (response) {
+            console.log(response.status);
+        });
     }
-    
-//    $scope.submit = function () {
-//        tempService.postData($scope.personInfo).then(function (response) {
-//            console.log("from temp")
-//            usersService.updateStatus(id,"waiting").then(function() {
-//                statusService.setStatus("waiting");
-//                $location.path("/signIn");
-//            })
-//        }, function (response) {
-//            console.log(response.status);
-//        });
-//    }
 });

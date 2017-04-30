@@ -56,7 +56,6 @@ app.controller("ctrl", function ($scope, authService, $location, idService, idNu
     $scope.signin = function () {
         $scope.userInput.idNumber = $scope.userInput.password;
         authService.signin($scope.userInput).then(function (response) {
-            console.log(response.data);
             idService.setId(response.data.id);
             idNumberService.setId(response.data.idNumber);
             tokenService.setToken(response.data.token);
