@@ -26,8 +26,8 @@
                 <div class="row">
                     <div class="col-md-3">
                         <select ng-model="personInfo.sex" class="form-control">
-                            <option value="male">ذكر</option>
-                            <option value="female">انثى</option>
+                            <option value="ذكر">ذكر</option>
+                            <option value="انثى">انثى</option>
                         </select>
                     </div>
                     <div class="col-md-3">
@@ -45,10 +45,10 @@
                 <div class="row">
                     <div class="col-md-3">
                         <select ng-model="personInfo.status" class="form-control">
-                            <option value="single"> اعزب </option>
-                            <option value="married"> متزوج/ة</option>
-                            <option value="divorced" ng-if="personInfo.sex === 'female'"> مطلق/ة</option>
-                            <option value="widow" ng-if="personInfo.sex === 'female'"> ارملة </option>
+                            <option value="اعزب"> اعزب </option>
+                            <option value="متزوج/ة"> متزوج/ة</option>
+                            <option value="divorced" ng-if="personInfo.sex === 'انثى'"> مطلق/ة</option>
+                            <option value="widow" ng-if="personInfo.sex === 'انثى'"> ارملة </option>
                         </select>
                     </div>
                     <div class="col-md-3">

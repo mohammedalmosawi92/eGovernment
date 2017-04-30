@@ -1,4 +1,4 @@
-var app = angular.module("app.personInfo", ["ngRoute", "tempModule","idModule", "idNumberModule", "tokenModule", "privModule", "usernameModule"]);
+var app = angular.module("app.personInfo", ["ngRoute", "tempModule","idModule", "idNumberModule", "tokenModule", "privModule", "usernameModule", "statusModule"]);
 
 app.config(function ($routeProvider) {
     $routeProvider.when("/personInfo", {
@@ -7,16 +7,15 @@ app.config(function ($routeProvider) {
     })
 })
 
-app.controller("personInfoCtrl", function ($scope, tempService, $location, idService, idNumberService, tokenService, privService, usernameService) {
+app.controller("personInfoCtrl", function ($scope, tempService, $location, idService, idNumberService, tokenService, privService, usernameService, statusService) {
+    
     $scope.personInfo = {};
     $scope.personInfo.dob = new Date();
     $scope.personInfo.username = usernameService.getUsername();
     $scope.personInfo.idNumber = Number(idNumberService.getId());
-    $scope.personInfo.status = "single";
-    $scope.personInfo.sex = "male";
-    console.log($scope.personInfo);
+    $scope.personInfo.status = "اعزب";
+    $scope.personInfo.sex = "ذكر";
     $scope.submit = function () {
-        console.log($scope.personInfo)
         tempService.postData($scope.personInfo).then(function (response) {
             $location.path("/signIn");
         }, function (response) {

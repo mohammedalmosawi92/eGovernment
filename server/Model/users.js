@@ -22,7 +22,13 @@ var usersSchema = new Schema({
         required: true,
         unique: true
     },
-    requests : []
+    status: {
+        type: String,
+        require: true,
+        default: "noData",
+        enum: ["noData", "waiting", "notAccepted", "accepted"]
+    },
+    requests: []
 })
 
 module.exports = mongoose.model("Users", usersSchema);

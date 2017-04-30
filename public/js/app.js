@@ -1,4 +1,4 @@
-var app = angular.module("app", ["ngRoute", "app.kayd", "app.hawiye", "app.sejel", "app.home", "app.passport", "app.personInfo", "app.confirm", "app.signup", "app.contactUs", "authModule", "idModule", "idNumberModule", "tokenModule", "privModule", "usernameModule"]);
+var app = angular.module("app", ["ngRoute", "app.kayd", "app.hawiye", "app.sejel", "app.home", "app.passport", "app.personInfo", "app.confirm", "app.signup", "app.contactUs", "authModule", "idModule", "idNumberModule", "tokenModule", "privModule", "usernameModule", "statusModule"]);
 
 app.config(function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix("");
@@ -9,7 +9,7 @@ app.config(function ($routeProvider, $locationProvider) {
     })
 });
 
-app.service("AuthInterceptor", ["$q", "$location", "tokenService", function ($q, $location, tokenService) {
+app.service("AuthInterceptor", ["$q", "$location", "tokenService", function ($q, $location, tokenService, idService, idNumberService, privService, usernameService, statusService) {
     this.request = function (config) {
         var token = tokenService.getToken();
         if (token) {
@@ -26,7 +26,8 @@ app.service("AuthInterceptor", ["$q", "$location", "tokenService", function ($q,
             idNumberService.removeId();
             tokenService.removeToken();
             privService.removePriv();
-            usernameService.removeUsername(response.data.username);
+            usernameService.removeUsername();
+            statusService.removeStatus();
         }
         return $q.reject(response);
     };
@@ -36,7 +37,7 @@ app.config(["$httpProvider", function ($httpProvider) {
     $httpProvider.interceptors.push("AuthInterceptor");
 }]);
 
-app.controller("ctrl", function ($scope, authService, $location, idService, idNumberService, tokenService, privService, usernameService) {
+app.controller("ctrl", function ($scope, authService, $location, idService, idNumberService, tokenService, privService, usernameService, statusService) {
 
     //to check if there is a user
     $scope.loginCheck = function () {
@@ -61,6 +62,7 @@ app.controller("ctrl", function ($scope, authService, $location, idService, idNu
             tokenService.setToken(response.data.token);
             privService.setPriv(response.data.privilege);
             usernameService.setUsername(response.data.username);
+            statusService.setStatus(response.data.status);
             $scope.userInput = {};
             $location.path("/");
         }, function (response) {
@@ -75,6 +77,7 @@ app.controller("ctrl", function ($scope, authService, $location, idService, idNu
         tokenService.removeToken();
         privService.removePriv();
         usernameService.removeUsername();
+        statusService.removeStatus();
     };
 
 })
