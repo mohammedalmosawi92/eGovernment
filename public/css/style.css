@@ -201,15 +201,32 @@ body {
 }
 
 .contact {
+    margin-top: 40px;
+    margin-bottom: 50px;
     direction: rtl;
     text-align: center;
     color: #1A237E;
+    font-family: "Cairo"
 }
 
 .shakawa {
     direction: rtl;
     text-align: center;
     color: #1A237E;
+    font-family: "Cairo";
+    margin-bottom: 20px;
+}
+
+.shakawa .btn {
+    margin-top: 10px;
+}
+
+.complain-msg {
+    direction: rtl;
+    text-align: center;
+    color: #1A237E;
+    font-family: "Cairo";
+    color: red;
 }
 
 textarea {
@@ -247,6 +264,19 @@ textarea {
 }
 
 
+/************************************************
+	complain page styles starts here
+ ************************************************/
+.complain-page {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    direction: rtl;
+    font-family: "Cairo"
+}
+
+.complain-title {
+    margin-bottom: 50px;
+}
 /************************************************
 	person info page styles starts here
  ************************************************/
@@ -645,16 +675,66 @@ textarea {
 .copy-rights a:hover {
     color: #fff;
 }
+/************************************************
+	one-user-page
+ ************************************************/
+.one-user-page {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    direction: rtl;
+}
 
+.req-title {
+    text-align: center;
+    font-family: "Cairo";
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.dash {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.table-row {
+    font-family: "Cairo"
+}
+
+/************************************************
+	all data starts here
+ ************************************************/
+.all-data-page {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    direction: rtl;
+    font-family: "Cairo"
+}
+
+.all-data-title {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.one-data-row {
+    margin-bottom: 10px;
+}
 
 /************************************************
 	confirm starts here
  ************************************************/
 
 .confirm-page {
-    margin-top: 50px;
+    margin-top: 40px;
     margin-bottom: 50px;
     direction: rtl;
+}
+
+.confirm-title {
+    text-align: center;
+    font-family: "Cairo";
+    font-weight: 700;
+    margin-bottom: 50px;
 }
 
 .confirm-btn {
@@ -886,11 +966,13 @@ input[type=password]:hover {
     .banner .carousel-caption h1 {
         font-size: 40px !important;
         padding-bottom: 10px !important;
+        padding-top: 20px !important;
         margin: 0 !important;
     }
     .banner .carousel-caption h2 {
         font-size: 18px !important;
         padding-bottom: 10px !important;
+        padding-top: 20px !important;
         line-height: 26px !important;
     }
     .banner .carousel-caption {

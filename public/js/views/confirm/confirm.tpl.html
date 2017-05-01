@@ -1,85 +1,104 @@
 <div class="confirm-page">
     <div class="container" ng-init="loadData()">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="confirm-title">
+                    الصفحة الخاصة بتاكيد البيانات
+                </h1>
+            </div>
+        </div>
         <div ng-repeat="item in list">
             <div class="row" ng-if="!item.edit">
                 <div class="col-md-12">
                     <div class="item-name">
-                        رقم الهوية: {{item.idNumber}}
+                        <span>الاسم الاول: </span>{{item.firstName}}
+                    </div>
+                </div>
+            </div>
+            <div class="row images-row" ng-if="!item.edit">
+                <div class="col-sm-4 col-sm-offset-4 col-xs-6">
+                    <div class="item-info">
+                        <div class="info-span">الصورة الشمسية:</div>
                         <img ng-src="/img/{{item.personalImage.split('fakepath\\')[1]}}" class="img-responive">
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-6">
+                    <div class="item-info">
+                        <div class="info-span">صورة الهوية:</div>
                         <img ng-src="/img/{{item.idImage.split('fakepath\\')[1]}}" class="img-responive">
                     </div>
                 </div>
             </div>
 
             <div class="row" ng-if="!item.edit">
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-6">
                     <div class="item-info">
-                        الشهرة: {{item.lastName}}
+                        <span class="info-span">اسم الام:</span> {{item.motherName}}
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-6">
                     <div class="item-info">
-                        اسم الاب: {{item.fatherName}}
+                        <span class="info-span">اسم الاب:</span> {{item.fatherName}}
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-6">
                     <div class="item-info">
-                        الاسم الاول: {{item.firstName}}
+                        <span class="info-span">الشهرة:</span> {{item.lastName}}
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-6">
                     <div class="item-info">
-                        الجنس: {{item.sex}}
+                        <span class="info-span">الجنس:</span> {{item.sex}}
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-6">
                     <div class="item-info">
-                        تاريخ الميلاد: {{item.dob | date:'MM/dd/yyyy'}}
+                        <span class="info-span">تاريخ الميلاد:</span> {{item.dob | date:'MM/dd/yyyy'}}
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-6">
                     <div class="item-info">
-                        مكان الميلاد: {{item.placeOfBirth}}
+                        <span class="info-span">مكان الميلاد:</span> {{item.placeOfBirth}}
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-6">
                     <div class="item-info">
-                        اسم الام: {{item.motherName}}
+                        <span class="info-span">رقم الهوية:</span> {{item.idNumber}}
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-6">
                     <div class="item-info">
-                        الحالة: {{item.status}}
+                        <span class="info-span">الحالة:</span> {{item.status}}
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-6">
                     <div class="item-info">
-                        المذهب: {{item.religion}}
+                        <span class="info-span">المذهب:</span> {{item.religion}}
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-6">
                     <div class="item-info">
-                        رقم القيد: {{item.RegistrationNum}}
+                        <span class="info-span">رقم القيد:</span> {{item.RegistrationNum}}
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-6">
                     <div class="item-info">
-                        مكان القيد: {{item.RegistrationPlace}}
+                        <span class="info-span">مكان القيد:</span> {{item.RegistrationPlace}}
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-6">
                     <div class="item-info">
-                        رقم الهاتف الخيلوي: {{item.cellPhone}}
+                        <span class="info-span">رقم الهاتف الخيلوي:</span> {{item.cellPhone}}
                     </div>
                 </div>
-                <div class="col-sm-4 col-sm-offset-4">
+                <div class="col-sm-4 col-sm-offset-4 col-xs-6">
                     <div class="item-info">
-                        رقم الهاتف: {{item.phone}}
+                        <span class="info-span">رقم الهاتف:</span> {{item.phone}}
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-6">
                     <div class="item-info">
-                        عنوان السكن: {{item.address}}
+                        <span class="info-span">عنوان السكن:</span> {{item.address}}
                     </div>
                 </div>
             </div>
@@ -87,8 +106,7 @@
             <div class="row" ng-if="item.edit">
                 <div class="col-md-4 col-md-offset-8">
                     <div class="confirm-input-row">
-                        <input type="number" class="form-control" ng-model="item.idNumber" placeholder="رقم الهوية">
-
+                        <input type="text" class="form-control" placeholder="الاسم الأول" ng-model="item.firstName">
                     </div>
                 </div>
             </div>
@@ -96,7 +114,7 @@
             <div class="row" ng-if="item.edit">
                 <div class="col-md-4">
                     <div class="confirm-input-row">
-                        <input type="text" class="form-control" ng-model="item.lastName" placeholder="الشهرة">
+                        <input type="text" class="form-control" ng-model="item.motherName" placeholder="اسم الأم">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -106,14 +124,14 @@
                 </div>
                 <div class="col-md-4">
                     <div class="confirm-input-row">
-                        <input type="text" class="form-control" placeholder="الاسم الأول" ng-model="item.firstName">
+                        <input type="text" class="form-control" ng-model="item.lastName" placeholder="الشهرة">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="confirm-input-row">
                         <select class="form-control" ng-model="item.sex">
-                            <option value="male">ذكر</option>
-                            <option value="female">أنثى</option>
+                            <option value="ذكر">ذكر</option>
+                            <option value="انثى">أنثى</option>
                         </select>
                     </div>
                 </div>
@@ -129,16 +147,17 @@
                 </div>
                 <div class="col-md-4">
                     <div class="confirm-input-row">
-                        <input type="text" class="form-control" ng-model="item.motherName" placeholder="اسم الأم">
+                        <input type="number" class="form-control" ng-model="item.idNumber" placeholder="رقم الهوية">
+
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="confirm-input-row">
                         <select ng-model="item.status" class="form-control">
-                            <option value="single">اعزب</option>
-                            <option value="married">متزوج/ة</option>
-                            <option value="divorced" ng-if="item.sex === 'female'">مطلق/ة</option>
-                            <option value="widow" ng-if="item.sex === 'female'">ارملة</option>
+                            <option value="اعزب">اعزب</option>
+                            <option value="متزوج/ة">متزوج/ة</option>
+                            <option value="مطلقة" ng-if="item.sex === 'female'">مطلقة</option>
+                            <option value="ارملة" ng-if="item.sex === 'female'">ارملة</option>
                         </select>
                     </div>
                 </div>
@@ -185,6 +204,13 @@
 
                         <button class="btn btn-danger" ng-click="deleteItem(item._id, item)">حذف</button>
                     </div>
+                </div>
+            </div>
+            <div class="row text-center dash">
+                <div class="col-md-12">
+                    <span>
+                &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+               </span>
                 </div>
             </div>
         </div>
