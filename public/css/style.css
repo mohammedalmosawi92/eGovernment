@@ -87,6 +87,13 @@ body {
     background: none;
 }
 
+.dropdown span i {
+    color: white;
+    font-size: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
 .signin-pointer {
     cursor: pointer;
 }

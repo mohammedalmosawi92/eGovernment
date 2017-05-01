@@ -46,12 +46,16 @@
                         <li ng-if="!loginCheck()">
                             <a data-toggle="modal" data-target="#login-modal" class="signin-pointer">تسجيل الدخول</a>
                         </li>
-                        <li class="dropdonw" ng-if="checkUser() === 'admin'">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                        <li class="dropdown" ng-if="checkUser() === 'admin'">
+                            <span class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-cog" aria-hidden="true"></i>
+                            </span>
                             <ul class="dropdown-menu">
                                 <li><a href="#/confirm">تاكيد البيانات</a></li>
                                 <li><a href="#">طلبات التغير</a></li>
-                                <li><a href="#">شكاوى</a></li>
+                                <li><a href="#/complain">شكاوى</a></li>
+                                <li><a href="#/allData">كل البيانات</a></li>
+                                <li><a href="#/users">المستخدمون</a></li>
                             </ul>
                         </li>
                         <li ng-if="checkUser() === 'user'"><a href="#/personInfo">معلومات الشخصية</a></li>
@@ -66,14 +70,16 @@
                             <li><a href="#/home" style="text-align: center">الصفحة الرئيسية</a></li>
                             <li ng-if="checkUser === 'user'"><a href="#/contactUs"> للاتصال بنا </a></li>
                             <li ng-if="checkUser === 'user'"><a href="#/personInfo">معلومات الشخصية</a></li>
-                            <li class="dropdonw" ng-if="checkUser === 'admin'">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <li class="dropdown" ng-if="checkUser === 'admin'">
+                                <span class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="fa fa-cog" aria-hidden="true"></i>
-                                </a>
+                                </span>
                                 <ul class="dropdown-menu">
                                     <li><a href="#/confirm">تاكيد البيانات</a></li>
                                     <li><a href="#">طلبات التغير</a></li>
-                                    <li><a href="#">شكاوى</a></li>
+                                    <li><a href="#/complain">شكاوى</a></li>
+                                    <li><a href="#/allData">كل البيانات</a></li>
+                                    <li><a href="#/users">المستخدمون</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -164,6 +170,7 @@
     <script src="/js/views/sejel/sejel.js"></script>
     <script src="/js/views/complain/complain.js"></script>
     <script src="/js/views/users/users.js"></script>
+    <script src="/js/views/allData/allData.js"></script>
 
     <!--  Services  -->
     <script src="/js/services/tempServ.js"></script>
@@ -177,9 +184,9 @@
     <script src="/js/services/userStatus.js"></script>
     <script src="/js/services/usersServ.js"></script>
     <script src="/js/services/complainsServ.js"></script>
-    
+
     <!--  Directives  -->
-    
+
     <script src="/js/directives/uploadImage.js"></script>
 </body>
 

@@ -1,4 +1,4 @@
-var app = angular.module("app", ["ngRoute", "app.kayd", "app.hawiye", "app.sejel", "app.home", "app.passport", "app.personInfo", "app.confirm", "app.signup", "app.contactUs", "authModule", "idModule", "idNumberModule", "tokenModule", "privModule", "usernameModule", "statusModule", "app.complain", "upload", "app.users"]);
+var app = angular.module("app", ["ngRoute", "app.kayd", "app.hawiye", "app.sejel", "app.home", "app.passport", "app.personInfo", "app.confirm", "app.signup", "app.contactUs", "authModule", "idModule", "idNumberModule", "tokenModule", "privModule", "usernameModule", "statusModule", "app.complain", "upload", "app.users", "app.allData"]);
 
 app.config(function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix("");
