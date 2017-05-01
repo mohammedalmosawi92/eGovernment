@@ -1,4 +1,4 @@
-<div class="container-fluid" ng-init="loadData()">
+<div class="container" ng-init="loadData()">
     <div class="row">
         <div class="col-md-4">
             <h3>passeport libanais</h3>
@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="item.info">
-                {{item.personalImage}}
+                <img ng-src="/img/{{item.personalImage.split('fakepath\\')[1]}}" class="img-responsive">
             </div>
         </div>
         <div class="col-md-8">
@@ -61,10 +61,10 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="item-info">
-                            <select ng-model="personInfo.validity" class="form-control">
+                            <select ng-model="item.validity" class="form-control">
                                 <option value="year">عام</option>
                                 <option value="2year">عامان </option>
-                                <option value="3year">خمسة أعوام </option>
+                                <option value="3year">ثلاثة أعوام </option>
                             </select>
                         </div>
                     </div>
@@ -72,9 +72,68 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <form name="billing">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>الفاتورة</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>فيزا كارد</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <span class="billing-info">*رقم البطاقة</span>
+            </div>
+            <div class="col-md-4">
+                <input type="number" class="form-control" placeholder="رقم البطاقة" ng-model="billing.cardNumber" required>
+            </div>
+            <div class="col-md-2">
+                <span class="billing-info">*اسم صاحب البطاقة</span>
+            </div>
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="اسم صاحب البطاقة" required ng-model="billing.cardHolderName">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <span class="billing-info">*تاريخ انتهاء الصلاحية</span>
+            </div>
+            <div class="col-md-1">
+                <input class="form-control" placeholder="شهر" required ng-model="billing.expiryMonth">
+            </div>
+            <div class="col-md-1">
+                <input class="form-control" placeholder="سنة" required ng-model="billing.expiryYear">
+            </div>
+            <div class="col-md-1">
+                <input class="form-control" placeholder="CVV" ng-model="billing.cvv" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>معلومات عن الفاتورة</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <span class="billing-info">*مكان السكن</span>
+            </div>
+            <div class="col-md-4">
+                <input type="text" class="form-control" ng-model="billing.address" placeholder="مكان السكن" required>
+            </div>
+            <div class="col-md-2">
+                <span class="billing-info">رقم البريد</span>
+            </div>
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="رقم البريد">
+            </div>
+        </div>
+    </form>
+    <div class="row text-center">
         <div class="col-md-12">
-            <button type="button" class="btn btn-info" ng-click="send()" ng-disabled="myForm.$invalid">ارسال</button>
+            <button type="button" class="btn btn-info" ng-click="send(item)">ارسال</button>
         </div>
     </div>
 </div>

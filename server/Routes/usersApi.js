@@ -14,8 +14,6 @@ usersRouter.use(userAdminPriv);
 
 //update the status
 usersRouter.put("/:id/:status", function(req, res) {
-    console.log(req.params.id)
-    console.log(req.params.status)
     Users.findById(req.params.id, function(err, user) {
         if(err) {
             res.status(500).send({err: err})
@@ -31,6 +29,28 @@ usersRouter.put("/:id/:status", function(req, res) {
         }
     })
 })
+
+//add request type and the date of the request
+usersRouter.post("/:id", function(req, res) {
+    Users.findById(req.params.id, function(err, data) {
+        if(err) {
+            res.status(500).send({err: err});
+        }else {
+            var obj = {};
+            for(key in req.body) {
+                obj[key] = req.body[key];
+            }
+            data.requests.push(obj);
+            data.save(function(err, result) {
+                if(err) {
+                    res.status(500).send({err: err});
+                }else {
+                    res.status(200).send({message: "success", data: data});
+                }
+            })
+        }
+    })
+});
 
 //only admin can do the below requests
 usersRouter.use(adminPriv);
@@ -53,29 +73,6 @@ usersRouter.get("/:id", function(req, res) {
             res.status(500).send({err: err});
         }else {
             res.status(200).send({message: "success", data: data});
-        }
-    })
-});
-
-//add request type and the date of the request
-usersRouter.post("/:id", function(req, res) {
-    Users.findById(req.params.id, function(err, data) {
-        if(err) {
-            res.status(500).send({err: err});
-        }else {
-            var obj = {};
-            for(key in req.body) {
-                obj[key] = req.body[key];
-            }
-            obj.date = new Date().toDateString;
-            data.requests.push(obj);
-            data.save(function(err, result) {
-                if(err) {
-                    res.status(500).send({err: err});
-                }else {
-                    res.status(200).send({message: "success", data: data});
-                }
-            })
         }
     })
 });

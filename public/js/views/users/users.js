@@ -8,6 +8,7 @@ app.config(function ($routeProvider) {
 })
 
 app.controller("usersCtrl", function ($scope, usersService) {
+    
     $scope.loadData = function () {
         $scope.usersList = [];
         $scope.adminList = [];
@@ -42,7 +43,11 @@ app.controller("usersCtrl", function ($scope, usersService) {
     
     $scope.sortByReqNum = function() {
         $scope.usersList.sort(function(a, b) {
-            return a.requests.length - b.requests.length;
+            if(a.requests.length < b.requests.length) {
+                return 1;
+            } else if(a.requests.length > b.requests.length) {
+                return -1;
+            }
         })
     }
 

@@ -14,8 +14,9 @@ changeRouter.use(userAdminPriv);
 
 //add new Complain info
 changeRouter.post("/", function(req, res) {
+    console.log(req.body);
     var newChange = new Change(req.body);
-    newComplain.save(function(err, data) {
+    newChange.save(function(err, data) {
         if(err) {
             res.status(500).send({err: err});
         }else {

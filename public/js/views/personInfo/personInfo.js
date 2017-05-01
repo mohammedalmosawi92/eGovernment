@@ -23,15 +23,11 @@ app.controller("personInfoCtrl", function ($scope, tempService, $location, idSer
     $scope.personInfo.sex = "ذكر";
     
     $scope.personalImage = function(file) {
-        $scope.personInfo.personalImage = file.value.split("fakepath\\")[1];
+        $scope.personInfo.personalImage = file.value;
     }
     
     $scope.idImage = function(file) {
-        $scope.personInfo.idImage = file.value.split("fakepath\\")[1];
-    }
-    
-    $scope.fileNameChanged = function(file) {
-        $scope.personInfo.personalImage = file.value.split("fakepath\\")[1];
+        $scope.personInfo.idImage = file.value;
     }
     
     $scope.loadData = function() {

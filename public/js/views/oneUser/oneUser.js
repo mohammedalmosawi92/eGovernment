@@ -21,5 +21,10 @@ app.controller("oneUserCtrl", function ($scope, requestService, usersService, $r
         }, function (response) {
             console.log("no data");
         })
+        usersService.getUserById(userId).then(function(response) {
+            $scope.reqList = response.data.data.requests;
+        }, function(response) {
+            console.log(response.status);
+        })
     }
 })

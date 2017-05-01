@@ -7,6 +7,10 @@ var ChangeSchema = new Schema({
         required: true,
         unique: true
     },
+    username: {
+        type: String,
+        required: true,
+    },
     change: {
         type: [],
         required: true

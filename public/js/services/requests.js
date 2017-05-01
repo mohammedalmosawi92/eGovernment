@@ -25,4 +25,14 @@ app.service("requestService", function($http) {
         return $http.put("http://localhost:8080/personal/" + id + query);
     }
     
+    this.changeData = function(id, data) {
+        var query = "?";
+        for(key in data) {
+            query += key + "=" + data[key] + "&"
+        }
+        return $http.put("http://localhost:8080/personal/changeInfo/" + id + query);
+    }
+    
+    
+    
 })

@@ -1,0 +1,27 @@
+<div class="change-page" ng-init="loadData()">
+    <div class="container">
+        <div ng-repeat="item in list">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2><a href="#/oneUser/{{item.userId}}">{{item.username}}</a></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div ng-repeat="change in item.change">
+                    <div class="col-md-3">
+                        {{change.type.split(",")[0]}}
+                    </div>
+                    <div class="col-md-3">
+                        {{change.value}}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="btn btn-info" ng-click="accept(item.userId, item.change,  item._id)">موافقة</button>
+                    <button class="btn btn-danger" ng-click="deleteChange(item._id)">حذف</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

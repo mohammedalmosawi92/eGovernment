@@ -9,8 +9,9 @@ app.service("usersService", function($http) {
         return $http.get("http://localhost:8080/users/" + id);
     }
     
-    this.postRequestType = function(data) {
-        return $http.post("http://localhost:8080/users/", data);
+    this.postRequestType = function(id, data) {
+        console.log(id)
+        return $http.post("http://localhost:8080/users/" + id, data);
     }
     
     this.deleteUser = function(id) {

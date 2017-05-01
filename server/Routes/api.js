@@ -86,4 +86,23 @@ apiRouter.put("/:id", function(req, res) {
     })
 })
 
+apiRouter.put("/changeInfo/:userId", function(req, res) {
+    Personal.findOne({userId:req.params.userId}, function(err, data) {
+        if(err) {
+            res.status(500).send({err: err});
+        }else {
+            for(key in req.query) {
+                data[key] = req.query[key];
+            }
+            data.save(function(err, updatedData) {
+                if(err) {
+                    res.status(500).send({err: err});
+                }else {
+                    res.status(200).send({message: "You have updated a personal info", data: updatedData});
+                }
+            })
+        }
+    })
+})
+
 module.exports = apiRouter;

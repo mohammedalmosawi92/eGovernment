@@ -1,4 +1,4 @@
-var app = angular.module("app", ["ngRoute", "app.kayd", "app.hawiye", "app.sejel", "app.home", "app.passport", "app.personInfo", "app.confirm", "app.signup", "app.contactUs", "authModule", "idModule", "idNumberModule", "tokenModule", "privModule", "usernameModule", "statusModule", "app.complain", "upload", "app.users", "app.allData", "app.oneUser"]);
+var app = angular.module("app", ["ngRoute", "app.kayd", "app.hawiye", "app.sejel", "app.home", "app.passport", "app.personInfo", "app.confirm", "app.signup", "app.contactUs", "authModule", "idModule", "idNumberModule", "tokenModule", "privModule", "usernameModule", "statusModule", "app.complain", "app.users", "app.allData", "app.oneUser", "app.change", "app.changeReq", "tempModule"]);
 
 app.config(function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix("");
@@ -37,8 +37,8 @@ app.config(["$httpProvider", function ($httpProvider) {
     $httpProvider.interceptors.push("AuthInterceptor");
 }]);
 
-app.controller("ctrl", function ($scope, authService, $location, idService, idNumberService, tokenService, privService, usernameService, statusService) {
-    
+app.controller("ctrl", function ($scope, authService, $location, idService, idNumberService, tokenService, privService, usernameService, statusService, tempService) {
+
     //to check if there is a user
     $scope.loginCheck = function () {
         return authService.isAuthenticated();
@@ -48,6 +48,10 @@ app.controller("ctrl", function ($scope, authService, $location, idService, idNu
     $scope.checkUser = function () {
         return privService.getPriv();
     };
+
+    $scope.userStatus = function () {
+        return statusService.getStatus();
+    }
 
     //to set an obj for userInput
     $scope.userInput = {};

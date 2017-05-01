@@ -87,10 +87,12 @@ body {
     background: none;
 }
 
-.dropdown span i {
+.dropdown span h3 {
+    font-family: "Cairo";
     color: white;
+    font-weight: 700;
     font-size: 20px;
-    margin-top: 15px;
+    margin-top: 14px;
     cursor: pointer;
 }
 
@@ -295,6 +297,9 @@ textarea {
 
 .second-item {
     background-image: url(../img/banner-image.jpg);
+}
+.third-item {
+    background-image: url(../img/sejel.jpg);
 }
 
 

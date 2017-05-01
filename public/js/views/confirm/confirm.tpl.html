@@ -5,8 +5,8 @@
                 <div class="col-md-12">
                     <div class="item-name">
                         رقم الهوية: {{item.idNumber}}
-                        <img ng-src="/img/{{item.personalImage}}" class="img-responive">
-                        <img ng-src="/img/{{item.idImage}}" class="img-responive">
+                        <img ng-src="/img/{{item.personalImage.split('fakepath\\')[1]}}" class="img-responive">
+                        <img ng-src="/img/{{item.idImage.split('fakepath\\')[1]}}" class="img-responive">
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@
             <div class="row" ng-if="item.edit">
                 <div class="col-md-4 col-md-offset-8">
                     <div class="confirm-input-row">
-                        <input type="number" class="form-control" ng-model="item.idNumber" placeholder="رفم الهوية">
+                        <input type="number" class="form-control" ng-model="item.idNumber" placeholder="رقم الهوية">
 
                     </div>
                 </div>

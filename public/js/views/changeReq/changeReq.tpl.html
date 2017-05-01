@@ -1,0 +1,83 @@
+<div class="change-req-page">
+    <form name="changeForm">
+        <div class="container">
+            <div class="row" ng-repeat="item in change | limitTo: 5">
+                <div class="col-md-6">
+                    <select ng-model="item.type" class="form-control">
+                        <option value="الاسم الاول,firstName">الاسم الاول</option>
+                        <option value="اسم الاب,fatherName">اسم الاب</option>
+                        <option value="الشهرة,lastName">الشهره</option>
+                        <option value="اسم الام,motherName">اسم الام</option>
+                        <option value="تاريخ الميلاد,dob">تاريخ الميلاد</option>
+                        <option value="مكان الميلاد,placeOfBirth">مكان الميلاد</option>
+                        <option value="الحالة,status">الحالة</option>
+                        <option value="المذهب,religion">المذهب</option>
+                        <option value="رقم القيد,RegistrationNum">رقم القيد</option>
+                        <option value="مكان القيد,RegistrationPlace">مكان القيد</option>
+                        <option value="رقم الهاتف الخليوي,cellPhone">رقم الهاتف الخلوي</option>
+                        <option value="رقم الهاتف,phone">رقم الهاتف</option>
+                        <option value="عنوان السكن,address">عنوان السكن</option>
+                        <option value="الصورة الشمسية,personalImage">الصورة الشمسية</option>
+                        <option value="صورة الهوية,idImage">صورة الهوية</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" placeholder="اكتب هنا" class="form-control" ng-model="item.value" ng-if="item.type === 'الاسم الاول,firstName'" required>
+
+                    <input type="text" placeholder="اكتب هنا" class="form-control" ng-model="item.value" ng-if="item.type === 'اسم الاب,fatherName'" required>
+
+                    <input type="text" placeholder="اكتب هنا" class="form-control" ng-model="item.value" ng-if="item.type === 'الشهرة,lastName'" required>
+
+                    <input type="text" placeholder="اكتب هنا" class="form-control" ng-model="item.value" ng-if="item.type === 'اسم الام,motherName'" required>
+
+                    <input type="text" placeholder="اكتب هنا" class="form-control" ng-model="item.value" ng-if="item.type === 'مكان الميلاد,placeOfBirth'" required>
+
+                    <input type="text" placeholder="اكتب هنا" class="form-control" ng-model="item.value" ng-if="item.type === 'المذهب,religion'" required>
+
+                    <input type="text" placeholder="اكتب هنا" class="form-control" ng-model="item.value" ng-if="item.type === 'مكان القيد,RegistrationPlace'" required>
+
+                    <input type="text" placeholder="اكتب هنا" class="form-control" ng-model="item.value" ng-if="item.type === 'عنوان السكن,address'" required>
+
+                    <input type="date" class="form-control" ng-model="item.value" ng-if="item.type === 'تاريخ الميلاد,dob'" required>
+
+                    <select ng-model="item.value" class="form-control" ng-if="item.type === 'الحالة,status'" required>
+                        <option value="اعزب"> اعزب </option>
+                        <option value="متزوج/ة"> متزوج/ة</option>
+                        <option value="مطلقة"> مطلقة</option>
+                        <option value="ارملة"> ارملة </option>
+                    </select>
+
+                    <input type="number" placeholder="ادخل الرقم هنا" class="form-control" ng-model="item.value" ng-if="item.type === 'رقم القيد,RegistrationNum'" required>
+
+                    <input type="number" placeholder="ادخل الرقم هنا" class="form-control" ng-model="item.value" ng-if="item.type === 'رقم الهاتف الخليوي,cellPhone'" required>
+
+                    <input type="number" placeholder="ادخل الرقم هنا" class="form-control" ng-model="item.value" ng-if="item.type === 'رقم الهاتف,phone'" required>
+
+                    <input type="file" placeholder="ادخل رابط الصورة هنا" class="form-control" onchange="angular.element(this).scope().personalImage(this)" ng-if="item.type === 'الصورة الشمسية,personalImage'" required>
+
+                    <input type="file" placeholder="ادخل رابط الصورة هنا" class="form-control" ng-if="item.type === 'صورة الهوية,idImage'" required onchange="angular.element(this).scope().idImage(this)">
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <button class="btn btn-success" ng-click="addChange()">add</button>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <button class="btn btn-success" ng-click="sendChange()" ng-disabled="changeForm.$invalid">send</button>
+                </div>
+            </div>
+            <div class="row" ng-if="success">
+                <div class="col-md-12">
+                    <h2>لقد تم ارسال طلبكم بنجاح</h2>
+                </div>
+            </div>
+            <div class="row" ng-if="fail">
+                <div class="col-md-12">
+                    <h2>لقد قمت بارسال طلب مسبقا الرجاء الانتظار حتى يتم دراسة طلبك ثم يمكنك تقديم طلب جديد</h2>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
