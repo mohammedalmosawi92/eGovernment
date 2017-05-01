@@ -34,7 +34,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li ng-if="loginCheck()"><a href="#/home" ng-click="logout()"> الخروج</a></li>
+                        <li ng-if="loginCheck()"><a href="#/home" ng-click="logout()"> خروج</a></li>
                         <li ng-if="!loginCheck()"><a href="#/signup">تسجيل</a></li>
                         <li ng-if="!loginCheck()">
                             <a data-toggle="modal" data-target="#login-modal" class="signin-pointer">تسجيل الدخول</a>
@@ -51,10 +51,8 @@
                                 <li><a href="#/users">المستخدمون</a></li>
                             </ul>
                         </li>
-                        <li ng-if="checkUser() === 'user'"><a href="#/personInfo">بياناتك</a></li>
                         <li ng-if="userStatus() === 'accepted'"><a href="#/changeReq">تغير بياناتك</a></li>
-                        <li ng-if="checkUser() === 'user'"><a href="#/contactUs"> للاتصال بنا
-                         </a></li>
+                        <li ng-if="checkUser() === 'user'"><a href="#/personInfo">بياناتك</a></li>
                         <li><a href="#/home">الصفحة الرئيسية</a></li>
                     </ul>
                 </div>
@@ -62,8 +60,7 @@
                     <div class="navbar-collapse collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
                             <li><a href="#/home" style="text-align: center">الصفحة الرئيسية</a></li>
-                            <li ng-if="checkUser === 'user'"><a href="#/contactUs"> للاتصال بنا </a></li>
-                            <li ng-if="checkUser === 'user'"><a href="#/personInfo">بياناتك</a></li>
+                            <li ng-if="checkUser() === 'user'"><a href="#/personInfo">بياناتك</a></li>
                             <li ng-if="userStatus() === 'accepted'"><a href="#/changeReq">تغير بياناتك</a></li>
                             <li class="dropdown" ng-if="checkUser === 'admin'">
                                 <span class="dropdown-toggle" data-toggle="dropdown">
@@ -77,11 +74,11 @@
                                     <li><a href="#/users">المستخدمون</a></li>
                                 </ul>
                             </li>
-                            <li>
+                            <li ng-if="!loginCheck()">
                                 <a data-toggle="modal" data-target="#login-modal" class="signin-pointer">تسجيل الدخول</a>
                             </li>
-                            <li><a href="#/signup">تسجيل</a></li>
-                            <li ng-if="loginCheck()"><a href="#/home" ng-click="logout()"> الخروج</a></li>
+                            <li ng-if="!loginCheck()"><a href="#/signup">تسجيل</a></li>
+                            <li ng-if="loginCheck()"><a href="#/home" ng-click="logout()"> خروج</a></li>
                         </ul>
                     </div>
                 </div>
