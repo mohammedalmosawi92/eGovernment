@@ -36,7 +36,7 @@ app.controller("personInfoCtrl", function ($scope, tempService, $location, idSer
     
     $scope.loadData = function() {
         console.log($scope.personInfo)
-        tempService.getDataByIdNumber($scope.personInfo.idNumber).then(function(response) {
+        tempService.getDataByUserId($scope.personInfo.userId).then(function(response) {
             $scope.personInfo = response.data.data;
             $scope.personInfo.dob = new Date(response.data.data.dob);
         }, function(response) {
@@ -46,7 +46,7 @@ app.controller("personInfoCtrl", function ($scope, tempService, $location, idSer
     
     
     $scope.loadInfo = function() {
-        requestService.getDataByIdNumber(idNumber).then(function(response) {
+        requestService.getDataByUserId(id).then(function(response) {
             $scope.yourInfo = response.data.data;
         })
     }

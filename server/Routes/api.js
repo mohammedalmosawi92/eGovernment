@@ -24,8 +24,8 @@ apiRouter.get("/", function(req, res) {
 apiRouter.use(userAdminPriv);
 
 //get personal info by id Number
-apiRouter.get("/:idNumber", function(req, res) {
-    Personal.findOne({idNumber:req.params.idNumber}, function(err, data) {
+apiRouter.get("/:userId", function(req, res) {
+    Personal.findOne({userId:req.params.userId}, function(err, data) {
         if(err) {
             res.status(500).send({err: err});
         }else {

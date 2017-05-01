@@ -32,6 +32,7 @@ var usersRouter = require("./Routes/usersApi.js");
 var authRouter = require("./Routes/auth.js");
 var filesRouter = require("./Routes/files.js");
 var complainRouter = require("./Routes/complainsApi.js");
+var changeRouter = require("./Routes/changeApi.js");
 
 //use routes
 app.use(authRouter);
@@ -39,6 +40,7 @@ app.use("/personal", apiRouter);
 app.use("/users", usersRouter);
 app.use("/temp", apiTempRouter);
 app.use("/complain", complainRouter);
+app.use("/change", changeRouter);
 app.use(filesRouter);
 
 //listen to port

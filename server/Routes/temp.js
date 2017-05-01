@@ -25,8 +25,8 @@ apiTempRouter.post("/", function (req, res) {
 });
 
 //get personal info by id
-apiTempRouter.get("/:idNumber", function (req, res) {
-    TempPersonal.findOne({idNumber: req.params.idNumber}, function (err, data) {
+apiTempRouter.get("/:userId", function (req, res) {
+    TempPersonal.findOne({userId:req.params.userId}, function (err, data) {
         if (err) {
             res.status(500).send({err: err});
         } else {

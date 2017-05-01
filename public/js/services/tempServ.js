@@ -5,8 +5,8 @@ app.service("tempService", function($http) {
         return $http.get("http://localhost:8080/temp/");
     }
     
-    this.getDataByIdNumber = function(id) {
-        return $http.get("http://localhost:8080/temp/" + id);
+    this.getDataByUserId = function(userId) {
+        return $http.get("http://localhost:8080/temp/" + userId);
     }
     
     this.postData = function(data) {

@@ -1,4 +1,4 @@
-var app = angular.module("app.kayd", ["ngRoute", "requestModule", "idNumberModule"]);
+var app = angular.module("app.kayd", ["ngRoute", "requestModule", "idModule"]);
 app.config(function ($routeProvider) {
     $routeProvider.when("/kayd", {
         templateUrl: "/js/views/kayd/kayd.tpl.html",
@@ -7,11 +7,10 @@ app.config(function ($routeProvider) {
 })
 
 
-app.controller("kaydCtrl", function ($scope, requestService, idNumberService) {
-    var idNumber= idNumberService.getId();
-    console.log(idNumber);
+app.controller("kaydCtrl", function ($scope, requestService, idService) {
+    var userId = idService.getId();
     $scope.loadData = function () {
-        requestService.getDataByIdNumber(idNumber).then(function (response) {
+        requestService.getDataByUserId(userId).then(function (response) {
             $scope.item = response.data.data;
             console.log($scope.item);
         }, function (response) {

@@ -1,4 +1,4 @@
-var app = angular.module("app.hawiye", ["ngRoute", "requestModule", "idNumberModule"]);
+var app = angular.module("app.hawiye", ["ngRoute", "requestModule", "idModule"]);
 app.config(function ($routeProvider) {
     $routeProvider.when("/hawiye", {
         templateUrl: "/js/views/hawiye/hawiye.tpl.html",
@@ -6,11 +6,10 @@ app.config(function ($routeProvider) {
     })
 })
 
-app.controller("hawiyeCtrl", function ($scope, requestService, idNumberService) {
-    var idNumber = idNumberService.getId();
-    console.log(idNumber);
+app.controller("hawiyeCtrl", function ($scope, requestService, idService) {
+    var userId = idService.getId();
     $scope.loadData = function () {
-        requestService.getDataByIdNumber(idNumber).then(function (response) {
+        requestService.getDataByUserId(userId).then(function (response) {
             $scope.item = response.data.data;
             console.log($scope.item);
         }, function (response) {
