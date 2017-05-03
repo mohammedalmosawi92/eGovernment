@@ -721,6 +721,61 @@ textarea {
 }
 
 /************************************************
+	change-req-page
+ ************************************************/
+
+.change-req-page {
+    direction: rtl;
+    font-family: "Cairo";
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.change-req-title {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.change-req-desc {
+    font-size: 23px;
+    font-weight: 500;
+    margin-right: 20px;
+    margin-bottom: 40px;
+}
+
+.add-field {
+    margin-top: 10px;
+}
+.send-change {
+    margin-top: 30px;
+}
+
+.change-success {
+    color: green;
+    text-align: center
+}
+.change-fail {
+    color: red;
+    text-align: center
+}
+
+/************************************************
+	change page here
+ ************************************************/
+.change-page {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    font-family: "Cairo";
+    direction: rtl;
+}
+
+.change-title {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+/************************************************
 	confirm starts here
  ************************************************/
 
