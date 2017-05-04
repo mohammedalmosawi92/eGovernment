@@ -1,9 +1,24 @@
 <div class="users-page" ng-init="loadData()">
     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="users-title">
+                    <h1>قائمة الاعضاء</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="users-desc">
+                    <h3>يمكن تعديل الامتياز الخاص بكل عضو.</h3>
+                    <h3>بالاضافة الى معرفة عدد الطلبات التي قام بها كل عضو.</h3>
+                </div>
+            </div>
+        </div>
         <div class="admin-list">
             <div class="row text-center">
                 <div class="col-md-12">
-                    <h2>Admin List</h2>
+                    <h2>لائحة الادارة</h2>
                 </div>
             </div>
             <div class="row">
@@ -11,32 +26,32 @@
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <tr>
-                                <th>#</th>
-                                <th class="text-center">
-                                    Username
+                                <th class="text-center">#</th>
+                                <th class="text-center tableheader">
+                                    اسم المستخدم
                                 </th>
-                                <th class="text-center">
-                                    Privilege
+                                <th class="text-center tableheader">
+                                    الامتياز
                                 </th>
-                                <th class="text-center">
-                                    Delete
+                                <th class="text-center tableheader">
+                                    حذف
                                 </th>
-                                <th class="text-center">
-                                    Update
+                                <th class="text-center tableheader">
+                                    تعديل
                                 </th>
                             </tr>
                             <tbody ng-repeat="admin in adminList">
                                 <tr>
-                                    <th class="text-center">
+                                    <th class="text-center tablebody">
                                         {{$index + 1}}
                                     </th>
-                                    <th class="text-center">
+                                    <th class="text-center tablebody">
                                         {{admin.username}}
                                     </th>
-                                    <th class="text-center" ng-if="!admin.edit">
+                                    <th class="text-center tablebody" ng-if="!admin.edit">
                                         {{admin.privilege}}
                                     </th>
-                                    <th class="text-center" ng-if="admin.edit">
+                                    <th class="text-center " ng-if="admin.edit">
                                         <select class="form-control" ng-model="admin.privilege">
                                             <option value="admin">Admin</option>
                                             <option value="user">User</option>
@@ -67,7 +82,7 @@
         <div class="user-list">
             <div class="row text-center">
                 <div class="col-md-12">
-                    <h2>Users List</h2>
+                    <h2>لائحة الاعضاء</h2>
                 </div>
             </div>
             <div class="row">
@@ -75,39 +90,39 @@
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <tr>
-                                <th class="text-center">
+                                <th class="text-center tableheader">
                                     #
                                 </th>
-                                <th class="text-center" ng-click="username()">
-                                    Username
+                                <th class="text-center sort-list tableheader" ng-click="username()">
+                                    اسم المستخدم <i class="fa fa-sort" aria-hidden="true"></i>
                                 </th>
-                                <th class="text-center">
-                                    Privilege
+                                <th class="text-center sort-list tableheader">
+                                    الامتياز <i class="fa fa-sort" aria-hidden="true"></i>
                                 </th>
-                                <th class="text-center" ng-click="status()">
-                                    Status
+                                <th class="text-center sort-list tableheader" ng-click="status()">
+                                    الحالة <i class="fa fa-sort" aria-hidden="true"></i>
                                 </th>
-                                <th class="text-center" ng-click="sortByReqNum()">
-                                    Number of requests
+                                <th class="text-center sort-list tableheader" ng-click="sortByReqNum()">
+                                    عدد الطلبات <i class="fa fa-sort" aria-hidden="true"></i>
                                 </th>
-                                <th class="text-center">
-                                    Delete
+                                <th class="text-center tableheader">
+                                    حذف
                                 </th>
-                                <th class="text-center">
-                                    Update
+                                <th class="text-center tableheader">
+                                    تعديل
                                 </th>
                             </tr>
-                            <tbody ng-repeat="user in usersList | orderBy: sortUsers: order">
+                            <tbody ng-repeat="user in usersList | orderBy: sortUsers: order" class="users-list-tbody">
                                 <tr>
-                                    <th class="text-center">
+                                    <th class="text-center tablebody">
                                         {{$index + 1}}
                                     </th>
-                                    <th class="text-center">
-                                        <a href="#/oneUser/{{user._id}}">
+                                    <th class="text-center tablebody">
+                                        <a href="#/oneUser/{{user._id}}" class="user-profile">
                                             {{user.username}}
                                         </a>
                                     </th>
-                                    <th class="text-center" ng-if="!user.edit">
+                                    <th class="text-center tablebody" ng-if="!user.edit">
                                         {{user.privilege}}
                                     </th>
                                     <th class="text-center" ng-if="user.edit">
@@ -116,10 +131,10 @@
                                             <option value="user">User</option>
                                         </select>
                                     </th>
-                                    <th class="text-center">
+                                    <th class="text-center tablebody">
                                         {{user.status}}
                                     </th>
-                                    <th class="text-center">
+                                    <th class="text-center tablebody">
                                         {{user.requests.length}}
                                     </th>
                                     <th class="text-center">

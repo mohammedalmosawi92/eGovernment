@@ -22,6 +22,56 @@ body {
     display: none !important;
 }
 
+.pass {
+    text-align: center;
+    font-family: "Cairo";
+    color: #1A237E;
+    margin-bottom: 20px;
+}
+
+.datapass {
+    text-align: center;
+    font-family: "Cairo";
+    color: #1A237E;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.billing-info {
+    font-size: 15px;
+    text-align: center;
+    font-family: "Cairo";
+    color: #1A237E;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+#billInfo {
+    direction: rtl;
+    float: right;
+    text-align: center;
+}
+
+.pix {
+    margin-left: 35px;
+}
+
+#expire {
+    font-size: 30px;
+    float: right;
+}
+
+.Bill {
+    text-align: center;
+    font-size: 40px;
+    font-family: "Cairo";
+    color: #1A237E;
+}
+
+.passp {
+    font-size: 40px;
+}
+
 .header-wrapper {
     overflow: hidden;
     text-align: center;
@@ -246,7 +296,6 @@ textarea {
     background-repeat: no-repeat;
 }
 
-
 .first-item {
     background-image: url(../img/passport.jpg);
 }
@@ -267,6 +316,7 @@ textarea {
 /************************************************
 	complain page styles starts here
  ************************************************/
+
 .complain-page {
     margin-top: 40px;
     margin-bottom: 50px;
@@ -277,6 +327,49 @@ textarea {
 .complain-title {
     margin-bottom: 50px;
 }
+
+
+/************************************************
+	users-page page styles starts here
+ ************************************************/
+
+.users-page {
+    direction: rtl;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    font-family: "Cairo";
+}
+
+.user-profile {
+    color: inherit !important;
+}
+
+.users-title {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.users-desc {
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.sort-list {
+    cursor: pointer;
+}
+
+.tableheader {
+    font-size: 18px;
+}
+
+.tablebody {
+    font-size: 15px;
+    position: relative;
+    top: 4px;
+}
+
+
 /************************************************
 	person info page styles starts here
  ************************************************/
@@ -301,6 +394,7 @@ textarea {
 .images-row {
     margin-bottom: 20px;
 }
+
 .personInfo-row {
     margin-bottom: 30px;
 }
@@ -491,9 +585,9 @@ textarea {
 
 .block .panel-default>.panel-heading .panel-title {
     line-height: 40px;
-    
 }
-.block .panel-default>.panel-heading .panel-title a{
+
+.block .panel-default>.panel-heading .panel-title a {
     line-height: 40px;
     padding-right: 10px;
 }
@@ -675,9 +769,12 @@ textarea {
 .copy-rights a:hover {
     color: #fff;
 }
+
+
 /************************************************
 	one-user-page
  ************************************************/
+
 .one-user-page {
     margin-top: 40px;
     margin-bottom: 50px;
@@ -700,9 +797,11 @@ textarea {
     font-family: "Cairo"
 }
 
+
 /************************************************
 	all data starts here
  ************************************************/
+
 .all-data-page {
     margin-top: 40px;
     margin-bottom: 50px;
@@ -719,6 +818,7 @@ textarea {
 .one-data-row {
     margin-bottom: 10px;
 }
+
 
 /************************************************
 	change-req-page
@@ -747,6 +847,7 @@ textarea {
 .add-field {
     margin-top: 10px;
 }
+
 .send-change {
     margin-top: 30px;
 }
@@ -755,14 +856,17 @@ textarea {
     color: green;
     text-align: center
 }
+
 .change-fail {
     color: red;
     text-align: center
 }
 
+
 /************************************************
 	change page here
  ************************************************/
+
 .change-page {
     margin-top: 40px;
     margin-bottom: 50px;
@@ -773,8 +877,14 @@ textarea {
 .change-title {
     text-align: center;
     font-weight: 700;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
+
+.change-desc {
+    font-weight: 500;
+}
+
+
 /************************************************
 	confirm starts here
  ************************************************/
@@ -805,7 +915,8 @@ textarea {
     font-family: "Cairo";
     margin-bottom: 20px;
 }
-.item-name span{
+
+.item-name span {
     font-weight: 700
 }
 
@@ -813,6 +924,15 @@ textarea {
     font-size: 20px;
     font-family: "Cairo";
     direction: rtl;
+    margin-bottom: 7px;
+}
+
+#title {
+    text-align: center;
+    font-size: 40px;
+    font-family: "Cairo";
+    color: #1A237E;
+    float: right;
 }
 
 .item-info div {
@@ -843,6 +963,8 @@ textarea {
 .confirm-input-row select {
     font-size: 18px;
 }
+
+
 /************************************************
 	login modal starts here
  ************************************************/
@@ -959,6 +1081,16 @@ input[type=password]:hover {
     text-decoration: underline;
 }
 
+.dropdown-menu {
+    text-align: center;
+    margin: auto;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Cairo";
+    padding: 20px;
+}
+
 
 /************************************************
 	media query starts here
@@ -1009,7 +1141,7 @@ input[type=password]:hover {
     .navbar-toggle {
         float: none !important;
         color: #fff !important;
-        margin-right: 0 !important;
+        margin-right: 0px !important;
     }
     .navbar-nav {
         display: block !important;
@@ -1047,7 +1179,6 @@ input[type=password]:hover {
         margin-left: 20px;
         margin-right: 20px;
     }
-    
     .banner .carousel-control i {
         position: absolute;
         top: -5px;
@@ -1099,5 +1230,28 @@ input[type=password]:hover {
     }
     .copy-rights {
         padding: 30px 0 !important;
+    }
+    .dropdown span h3 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        background: #454855!important;
+        color: #fff !important;
+    }
+    .dropdown span h3:hover {
+        background: #fff !important;
+        color: #454855 !important;
+    }
+    .dropdown span h3:focus {
+        background: #fff !important;
+        color: #454855 !important;
+    }
+    .dropdown {
+        margin: auto !important;
+        text-align: center !important;
+    }
+    .dropdown-menu {
+        background: #fff !important
     }
 }

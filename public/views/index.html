@@ -16,7 +16,7 @@
 </head>
 
 <body ng-app="app" ng-controller="ctrl">
-   
+
     <div class="flag">
         <div class="row text-right">
             <div class="col-md-12">
@@ -34,10 +34,19 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li ng-if="loginCheck()"><a href="#/home" ng-click="logout()"> خروج</a></li>
-                        <li ng-if="!loginCheck()"><a href="#/signup">تسجيل</a></li>
+                        <li ng-if="loginCheck()">
+                            <a href="#/home" ng-click="logout()"> خروج</a></li>
+                        <li ng-if="!loginCheck()">
+                            <a href="#/signup">تسجيل</a>
+                        </li>
                         <li ng-if="!loginCheck()">
                             <a data-toggle="modal" data-target="#login-modal" class="signin-pointer">تسجيل الدخول</a>
+                        </li>
+                        <li ng-if="checkUser() === 'admin'">
+                            <a href="#/allData">كل البيانات</a>
+                        </li>
+                        <li ng-if="checkUser() === 'admin'">
+                            <a href="#/users">المستخدمون</a>
                         </li>
                         <li class="dropdown" ng-if="checkUser() === 'admin'">
                             <span class="dropdown-toggle" data-toggle="dropdown">
@@ -47,8 +56,17 @@
                                 <li><a href="#/confirm">تاكيد البيانات</a></li>
                                 <li><a href="#/change">طلبات التغير</a></li>
                                 <li><a href="#/complain">شكاوى</a></li>
-                                <li><a href="#/allData">كل البيانات</a></li>
-                                <li><a href="#/users">المستخدمون</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" ng-if="checkUser() === 'user' && userStatus() === 'accepted'">
+                            <span class="dropdown-toggle" data-toggle="dropdown">
+                                <h3>الخدمات</h3>
+                            </span>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/passport">جواز سفر</a></li>
+                                <li><a href="#/kayd">اخراج تقيد</a></li>
+                                <li><a href="#/sejel">سجل عدلي</a></li>
+                                <li><a href="#/hawiye">هوية</a></li>
                             </ul>
                         </li>
                         <li ng-if="userStatus() === 'accepted'"><a href="#/changeReq">تغير بياناتك</a></li>
@@ -59,21 +77,39 @@
                 <div class="collapse-menu">
                     <div class="navbar-collapse collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li><a href="#/home" style="text-align: center">الصفحة الرئيسية</a></li>
+                            <li class="main-page"><a href="#/home" style="text-align: center">الصفحة الرئيسية</a></li>
                             <li ng-if="checkUser() === 'user'"><a href="#/personInfo">بياناتك</a></li>
                             <li ng-if="userStatus() === 'accepted'"><a href="#/changeReq">تغير بياناتك</a></li>
-                            <li class="dropdown" ng-if="checkUser === 'admin'">
+
+                            <li class="dropdown" ng-if="checkUser() === 'user' && userStatus() === 'accepted'">
                                 <span class="dropdown-toggle" data-toggle="dropdown">
-                                    <h3>الخيارات</h3>
-                                </span>
+                                <h3>الخدمات</h3>
+                            </span>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#/passport">جواز سفر</a></li>
+                                    <li><a href="#/kayd">اخراج تقيد</a></li>
+                                    <li><a href="#/sejel">سجل عدلي</a></li>
+                                    <li><a href="#/hawiye">هوية</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown" ng-if="checkUser() === 'admin'">
+                                <span class="dropdown-toggle" data-toggle="dropdown">
+                                <h3>الخيارات</h3>
+                            </span>
                                 <ul class="dropdown-menu">
                                     <li><a href="#/confirm">تاكيد البيانات</a></li>
                                     <li><a href="#/change">طلبات التغير</a></li>
                                     <li><a href="#/complain">شكاوى</a></li>
-                                    <li><a href="#/allData">كل البيانات</a></li>
-                                    <li><a href="#/users">المستخدمون</a></li>
                                 </ul>
                             </li>
+
+                            <li ng-if="checkUser() === 'admin'">
+                                <a href="#/users">المستخدمون</a>
+                            </li>
+                            <li ng-if="checkUser() === 'admin'">
+                                <a href="#/allData">كل البيانات</a>
+                            </li>
+
                             <li ng-if="!loginCheck()">
                                 <a data-toggle="modal" data-target="#login-modal" class="signin-pointer">تسجيل الدخول</a>
                             </li>
