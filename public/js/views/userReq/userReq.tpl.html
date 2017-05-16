@@ -1,0 +1,49 @@
+<div class="userReqPage">
+    <div class="container" ng-init="loadData()">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="userReq-title">
+                    الطلبات المقدّمة من المستخدمين لتنفيذها
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">اسم المستخدم</th>
+                            <th class="text-center">نوع الطلب</th>
+                            <th class="text-center">تاريخ الطلب</th>
+                            <th class="text-center">عدد السنين</th>
+                            <th class="text-center">حذف</th>
+                        </tr>
+
+                        <tbody ng-repeat="item in list">
+                            <tr>
+                                <td class="text-center tablebody">
+                                    {{$index + 1}}
+                                </td>
+                                <td class="text-center tablebody">
+                                    {{item.username}}
+                                </td>
+                                <td class="text-center tablebody">
+                                    {{item.reqType}}
+                                </td>
+                                <td class="text-center tablebody">
+                                    {{item.date | date : "MM/dd/yyyy"}}
+                                </td>
+                                <td class="text-center tablebody">
+                                    {{item.datas[0].validity}}</td>
+                                <td class="text-center">
+                                    <button ng-click="delReq(item._id)" class="btn btn-danger">حذف</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
