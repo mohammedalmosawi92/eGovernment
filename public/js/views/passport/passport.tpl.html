@@ -1,161 +1,226 @@
-<div class="container" ng-init="loadData()">
-    <div class="pass">
+<div class="request-pages">
+    <div class="container" ng-init="loadData()">
         <div class="row">
-            <div class="col-md-4">
-                <h3 class="passp">passeport libanais</h3>
-            </div>
-            <div class="col-md-4">
-                <h3 class="passp">الجمهورية اللبنانية</h3>
-            </div>
-            <div class="col-md-4">
-                <h3 class="passp">Lebanese passport</h3>
+            <div class="col-md-12">
+                <h1 class="request-title">
+                    طلب تقديم جواز سفر
+                </h1>
             </div>
         </div>
-    </div>
-    <div class="datapass">
         <div class="row">
-            <div class="col-md-4">
-                <div class="item.info">
-                    <img class="pix" ng-src="/img/{{item.personalImage.split('fakepath\\')[1]}}" class="img-responsive">
+            <div class="pass">
+                <div class="col-md-4">
+                    <h3 class="req-headers">passeport libanais</h3>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="req-headers">الجمهورية اللبنانية</h3>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="req-headers">Lebanese passport</h3>
                 </div>
             </div>
-            <div class="col-md-8">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="item-info">
-                            <span class="info-span">    الجنس: </span> {{item.sex}}
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="item-info">
-                            <span class="info-span">     الاسم الاول: </span>{{item.firstName}}
-                        </div>
-
+        </div>
+        <div class="row">
+            <div class="datapass">
+                <div class="col-md-4">
+                    <div class="item.info">
+                        <img class="pix" ng-src="/img/{{item.personalImage.split('fakepath\\')[1]}}" class="img-responsive">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="item-info">
-                            <span class="info-span">      مكان الميلاد: </span>{{item.placeOfBirth}}
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="item-info">
+                                <label class="info-span"> الجنس: </label> {{item.sex}}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item-info">
+                                <label class="info-span"> الاسم الاول: </label>{{item.firstName}}
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="item-info">
-                            <span class="info-span">     اسم الاب:</span> {{item.fatherName}}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="item-info">
+                                <label class="info-span"> مكان الميلاد: </label>{{item.placeOfBirth}}
+                            </div>
                         </div>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6"></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="item-info">
-                            <span class="info-span">  تاريخ الميلاد: </span>{{item.dob | date:'MM/dd/yyyy'}}
+                        <div class="col-md-6">
+                            <div class="item-info">
+                                <label class="info-span"> اسم الاب:</label> {{item.fatherName}}
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="item-info">
-                            <span class="info-span">   الشهرة: </span>{{item.lastName}}
-                        </div>
-
+                    <div class="row">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6"></div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="item-info">
-                            <span class="info-span">  الحالة: </span>{{item.status}}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="item-info">
+                                <label class="info-span"> تاريخ الميلاد: </label>{{item.dob | date:'MM/dd/yyyy'}}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item-info">
+                                <label class="info-span"> الشهرة: </label>{{item.lastName}}
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="item-info">
-                            <span class="info-span">اسم الام:</span> {{item.motherName}}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="item-info">
+                                <label class="info-span"> الحالة: </label>{{item.status}}
+                            </div>
                         </div>
-
+                        <div class="col-md-6">
+                            <div class="item-info">
+                                <label class="info-span">اسم الام:</label> {{item.motherName}}
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="item-info">
-                            <select ng-model="item.validity" class="form-control">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="item-info">
+                                <select ng-model="item.validity" class="form-control">
                                 <option value="year">عام</option>
                                 <option value="3year">ثلاثة أعوام </option>
                                 <option value="2year">خمسة أعوام</option>
                             </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <p id="expire" class="info-span">: الرجاء ادخال مدة الجواز </p>
+                        <div class="col-md-6">
+                            <div class="item-info">
+                                <p class="info-span"> الرجاء ادخال مدة الجواز: </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <form name="billing">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="Bill">الفاتورة</h1>
+                <form name="billing">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="Bill">الفاتورة</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="bill-req">
+                                الرجاء تعبئة بيانات بطاقتكم.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="billing-row">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label class="billing-info">تاريخ انتهاء الصلاحية*</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input class="form-control" placeholder="شهر" required ng-model="billing.expiryMonth">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input class="form-control" placeholder="سنة" required ng-model="billing.expiryYear">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label class="billing-info">اسم صاحب البطاقة*</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control" placeholder="اسم صاحب البطاقة" required ng-model="billing.cardHolderName">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="billing-row">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label class="billing-info">رقم البريد*</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control" placeholder="رقم البريد">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label class="billing-info">رقم البطاقة*</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <input type="number" class="form-control" placeholder="رقم البطاقة" ng-model="billing.cardNumber" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label class="billing-info">مكان السكن*</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control" ng-model="billing.address" placeholder="مكان السكن" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h2 id="title">فيزا كارد</h2>
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-info" ng-click="send(item)" data-toggle="modal" data-target="#send-modal">ارسال</button>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <input type="number" class="form-control" placeholder="رقم البطاقة" ng-model="billing.cardNumber" required>
+            <div class="modal" id="send-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none">
+                <div class="modal-dialog">
+                    <div class="loginmodal-container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="succ-msg">لقد تم ارسال طلبكم بنجاح</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="additional-msg">سوف يتم تسليم طلبكم في اقرب وقت ممكن</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="main-page-link">
+                                    <a data-target="#send-modal" data-dismiss="modal" ng-click="changePath()">
+                                        الصفحة الرئيسية
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-2">
-                <span class="billing-info">*رقم البطاقة</span>
-            </div>
-            <div class="col-md-4">
-                <input type="text" class="form-control" placeholder="اسم صاحب البطاقة" required ng-model="billing.cardHolderName">
-            </div>
-            <div class="col-md-2">
-                <span class="billing-info">*اسم صاحب البطاقة</span>
-
-            </div>
-        </div>
-        <div id="billInfo" class="row">
-            <div class="col-md-2">
-                <input class="form-control" placeholder="CVV" ng-model="billing.cvv" required>
-            </div>
-            <div class="col-md-2">
-                <input class="form-control" placeholder="سنة" required ng-model="billing.expiryYear">
-            </div>
-            <div class="col-md-2">
-                <input class="form-control" placeholder="شهر" required ng-model="billing.expiryMonth">
-            </div>
-            <div class="col-md-6">
-                <span class="billing-info">*تاريخ انتهاء الصلاحية</span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h2>معلومات عن الفاتورة</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                <span class="billing-info">*مكان السكن</span>
-            </div>
-            <div class="col-md-4">
-                <input type="text" class="form-control" ng-model="billing.address" placeholder="مكان السكن" required>
-            </div>
-            <div class="col-md-2">
-                <span class="billing-info">رقم البريد</span>
-            </div>
-            <div class="col-md-4">
-                <input type="text" class="form-control" placeholder="رقم البريد">
-            </div>
-        </div>
-    </form>
-    <div class="row text-center">
-        <div class="col-md-12">
-            <button type="button" class="btn btn-info" ng-click="send(item)">ارسال</button>
         </div>
     </div>
 </div>
