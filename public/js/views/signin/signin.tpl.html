@@ -1,0 +1,54 @@
+<div class="signin-page">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 class="signin-page-title">
+                    تسجيل الدخول
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+                <div class="signin-form">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="signin-row">
+                                <div class="input-label">اسم المتسخدم</div>
+                                <input type="text" placeholder="اسم المستخدم" class="form-control" ng-model="user.username">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="signin-row">
+                                <div class="input-label">كلمة المرور</div>
+                                <input type="password" placeholder="كلمة المرور" class="form-control" ng-model="user.password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <button class="btn btn-info" ng-click="signin()">دخول</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="sign-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none">
+        <div class="modal-dialog">
+            <div class="signin-loginmodal-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>تم تسجيل الدخول بنجاح</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="greeting">مرحبا بك معنا <span class="modal-username">{{usernameFunc()}}</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
