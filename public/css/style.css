@@ -11,7 +11,7 @@ body {
     max-width: 100%;
     overflow-x: hidden;
     height: 100%;
-    background: #e6e6e6
+    background: #EEEEEE
 }
 
 * {
@@ -22,9 +22,43 @@ body {
     display: none !important;
 }
 
+.line {
+    background: #0b913d;
+    height: 5px;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+/*request pages*/
+
+.request-pages {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    direction: rtl;
+    font-family: "Cairo";
+}
+
+.request-title {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.item-info {
+    font-size: 20px;
+    font-family: "Cairo";
+    direction: rtl;
+    margin-bottom: 7px;
+}
+
+.item-info div {
+    margin-bottom: 10px;
+}
+
 .pass {
     text-align: center;
-    font-family: "Cairo";
     color: #1A237E;
     margin-bottom: 20px;
 }
@@ -37,39 +71,76 @@ body {
     padding: 10px;
 }
 
-.billing-info {
-    font-size: 15px;
-    text-align: center;
-    font-family: "Cairo";
-    color: #1A237E;
-    margin-bottom: 20px;
-    padding: 10px;
+.req-headers {
+    font-size: 35px;
 }
 
-#billInfo {
-    direction: rtl;
-    float: right;
-    text-align: center;
-}
-
-.pix {
-    margin-left: 35px;
-}
-
-#expire {
-    font-size: 30px;
-    float: right;
+.image1 {
+    height: 150px;
+    width: 200px;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-left: 25px;
 }
 
 .Bill {
     text-align: center;
     font-size: 40px;
-    font-family: "Cairo";
-    color: #1A237E;
+    margin-top: 80px;
+    font-weight: 700;
 }
 
-.passp {
-    font-size: 40px;
+.billing-info {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.billing-row {
+    margin-bottom: 20px;
+}
+
+.bill-req {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.passport-embbasy {
+    font-size: 25px;
+}
+
+.main-page-link {
+    background: #0b913d;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin: auto;
+    width: 200px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.main-page-link a {
+    color: white !important;
+    padding: 5px 15px;
+    transition: all 0.5s;
+}
+
+.main-page-link a:hover {
+    transition: all 0.5s;
+    color: #80CBC4 !important;
+}
+
+.succ-msg {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.additional-msg {
+    font-size: 18px;
+    text-align: center;
 }
 
 .header-wrapper {
@@ -178,6 +249,90 @@ body {
     width: 80%;
 }
 
+.taarif {
+    direction: rtl;
+    text-align: center;
+    font-family: "Cairo"
+}
+
+.contact-page {
+    direction: rtl;
+    font-family: "Cairo";
+    margin-top: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.contact-title {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.user-complain-title {
+    margin-top: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.contact-header {
+    font-weight: 600;    
+}
+
+.shakawa .btn {
+    margin-top: 10px;
+}
+
+.complain-btn-row {
+    margin-top: 20px;
+}
+
+.complain-btn {
+    width: 80%;
+    font-size: 20px;
+}
+
+.complain-msg {
+    direction: rtl;
+    text-align: center;
+    color: #1A237E;
+    font-family: "Cairo";
+    color: red;
+}
+
+.complain-msg-accept {
+    direction: rtl;
+    text-align: center;
+    color: #1A237E;
+    font-family: "Cairo";
+    color: #0b913d;
+}
+
+textarea {
+    height: 200px;
+    width: 700px;
+}
+
+
+/************************************************
+	users-req page styles starts here
+ ************************************************/
+.userReq-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.userReqPage {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    direction: rtl;
+    font-family: "Cairo";
+}
+
+/************************************************
+	users page styles starts here
+ ************************************************/
+
 .banner .carousel-caption {
     top: 25%;
 }
@@ -236,52 +391,9 @@ body {
     padding-top: 13px;
 }
 
-
-/*dddddddddddddddddddddddddddddddddddddddddddddddd*/
-
 .banner .carousel-control:hover {
     background: #3b3e4a;
     transition: all 1s;
-}
-
-.taarif {
-    direction: rtl;
-    text-align: center;
-    font-family: "Cairo"
-}
-
-.contact {
-    margin-top: 40px;
-    margin-bottom: 50px;
-    direction: rtl;
-    text-align: center;
-    color: #1A237E;
-    font-family: "Cairo"
-}
-
-.shakawa {
-    direction: rtl;
-    text-align: center;
-    color: #1A237E;
-    font-family: "Cairo";
-    margin-bottom: 20px;
-}
-
-.shakawa .btn {
-    margin-top: 10px;
-}
-
-.complain-msg {
-    direction: rtl;
-    text-align: center;
-    color: #1A237E;
-    font-family: "Cairo";
-    color: red;
-}
-
-textarea {
-    height: 200px;
-    width: 700px;
 }
 
 .banner .carousel-inner:hover .btn {
@@ -369,6 +481,10 @@ textarea {
     top: 4px;
 }
 
+.tablebody a{
+    color: black;
+    text-decoration: none
+}
 
 /************************************************
 	person info page styles starts here
@@ -378,13 +494,34 @@ textarea {
     margin-top: 40px;
     margin-bottom: 50px;
     direction: rtl;
+    font-family: "Cairo"
+}
+
+.waiting-for-confirm {
+    color: #FF5722;
+    text-align: center
+}
+
+.change-link {
+    color: inherit !important;
+    font-weight: 600;
+}
+
+.person-page-info {
+    margin-bottom: 40px;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.phone-input {
+    text-align: center;
 }
 
 .personInfo-title {
     text-align: center;
     font-family: "Cairo";
     font-weight: 700;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .info-span {
@@ -400,21 +537,7 @@ textarea {
 }
 
 .personInfo-input {
-    border: 1px solid transparent;
-    outline: none !important;
-    -webkit-box-shadow: none !important;
-    -moz-box-shadow: none !important;
-    box-shadow: none !important;
-    border-bottom: 2px solid black;
-    border-radius: 0px;
     direction: rtl;
-}
-
-.personInfo-input:focus {
-    border: 1px solid transparent;
-    border-bottom: 2px solid black;
-    border-radius: 0px;
-    background: white;
 }
 
 
@@ -561,10 +684,33 @@ textarea {
     background: #454855;
     color: #fff;
     transition: all 1s;
+    text-decoration: none;
+}
+
+.user-info .just-icon {
+    margin-left: 10px;
+    margin-top: 10px;
+    background: #0b913d;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    float: right;
+    text-align: center;
+    padding-top: 7px;
+    cursor: pointer;
+}
+
+.user-info .just-icon:hover {
+    background: #454855;
+    color: #fff;
+    transition: all 1s;
+    text-decoration: none;
 }
 
 .user-info h1 {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 24px;
     color: #3b3e4a;
     font-family: "Cairo";
@@ -574,7 +720,11 @@ textarea {
     font-weight: 600;
 }
 
-.user-info p {}
+.user-info p {
+    font-family: "Cairo";
+    direction: rtl;
+    font-size: 15px;
+}
 
 .block .panel-default>.panel-heading {
     background: #fff;
@@ -585,6 +735,9 @@ textarea {
 
 .block .panel-default>.panel-heading .panel-title {
     line-height: 40px;
+    font-family: "Cairo";
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .block .panel-default>.panel-heading .panel-title a {
@@ -598,12 +751,14 @@ textarea {
 
 .block .panel-default>.panel-collapse {
     background: #f0f0f0;
-    color: #989898;
-    font-size: 14px;
+    color: #0b913d;
 }
 
 .block .panel-default>.panel-collapse .panel-body {
     padding: 20px 15px;
+    margin-right: 28px;
+    font-size: 17px;
+    font-family: "Cairo"
 }
 
 .block .panel-group .panel+.panel {
@@ -625,6 +780,8 @@ textarea {
     color: #000;
     display: inline-block;
     content: url(../img/minus-sign.png);
+    margin-right: -10px;
+    margin-left: 10px;
 }
 
 .accordion-caret .accordion-toggle.collapsed:before {
@@ -743,7 +900,7 @@ textarea {
 }
 
 .social [class^="fa"]:hover {
-    background: #454855;
+    background: white;
     color: #0b913d;
     transition: all 1s;
 }
@@ -835,10 +992,12 @@ textarea {
     text-align: center;
     font-weight: 700;
     margin-bottom: 40px;
+    color: #1A237E;
+    font-size: 70px;
 }
 
 .change-req-desc {
-    font-size: 23px;
+    font-size: 30px;
     font-weight: 500;
     margin-right: 20px;
     margin-bottom: 40px;
@@ -864,6 +1023,27 @@ textarea {
 
 
 /************************************************
+	signin page here
+ ************************************************/
+
+.signin-page {
+    margin-top: 40px;
+    font-family: "Cairo";
+    margin-bottom: 50px;
+    direction: rtl;
+}
+
+.signin-page-title {
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.signin-row {
+    margin-bottom: 10px;
+}
+
+
+/************************************************
 	change page here
  ************************************************/
 
@@ -872,18 +1052,34 @@ textarea {
     margin-bottom: 50px;
     font-family: "Cairo";
     direction: rtl;
+    font-size: 20px;
 }
 
 .change-title {
     text-align: center;
-    font-weight: 700;
-    margin-bottom: 30px;
+    font-weight: 600;
+    margin-bottom: 50px;
 }
 
-.change-desc {
+.username-change-req {
+    text-align: center;
+    margin-bottom: 20px;
     font-weight: 500;
 }
 
+.username-change-req a {
+    color: black;
+}
+
+.table-data th{
+    text-align: center;
+    font-size: 20px;
+}
+
+.table-data td{
+    text-align: center;
+    font-size: 18px
+}
 
 /************************************************
 	confirm starts here
@@ -920,25 +1116,6 @@ textarea {
     font-weight: 700
 }
 
-.item-info {
-    font-size: 20px;
-    font-family: "Cairo";
-    direction: rtl;
-    margin-bottom: 7px;
-}
-
-#title {
-    text-align: center;
-    font-size: 40px;
-    font-family: "Cairo";
-    color: #1A237E;
-    float: right;
-}
-
-.item-info div {
-    margin-bottom: 10px;
-}
-
 .personInfo-row input {
     margin-bottom: 10px;
 }
@@ -949,6 +1126,11 @@ textarea {
 
 .personInfo-row label {
     font-family: "Cairo"
+}
+
+.input-info-label {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .confirm-input-row {
@@ -981,16 +1163,47 @@ textarea {
     background-color: #F7F7F7;
     margin: 0 auto;
     margin-top: 150px;
-    border-radius: 2px;
+    border-radius: 10px;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     overflow: hidden;
-    font-family: roboto;
+    font-family: "Cairo";
+    direction: rtl;
+}
+
+.signin-loginmodal-container {
+    padding: 30px;
+    max-width: 350px;
+    width: 100% !important;
+    background-color: #F7F7F7;
+    margin: 0 auto;
+    margin-top: 150px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    font-family: "Cairo";
+    direction: rtl;
+}
+
+.signin-loginmodal-container h2 {
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #0b913d
+}
+
+.modal-username {
+    font-weight: 700;
+}
+
+.greeting {
+    font-size: 25px;
+    margin-top: 25px;
+    text-align: center;
 }
 
 .loginmodal-container h1 {
     text-align: center;
     font-size: 1.8em;
-    font-family: "Cairo";
 }
 
 .loginmodal-container .btn {
@@ -1001,8 +1214,7 @@ textarea {
     border-radius: 0px;
 }
 
-.loginmodal-container input[type=text],
-input[type=password] {
+.loginmodal-container .login-form input {
     height: 44px;
     font-size: 16px;
     width: 100%;
@@ -1058,8 +1270,6 @@ input[type=password]:hover {
     font-weight: 400;
     text-align: center;
     display: inline-block;
-    opacity: 0.6;
-    transition: opacity ease 0.5s;
 }
 
 .login-help {
@@ -1253,5 +1463,8 @@ input[type=password]:hover {
     }
     .dropdown-menu {
         background: #fff !important
+    }
+    .phone-input {
+        text-align: right
     }
 }

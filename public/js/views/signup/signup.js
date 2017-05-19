@@ -17,7 +17,7 @@ app.controller("signupCtrl", function($scope, authService, $location) {
         }else {
             $scope.notMatch = false;
             authService.signup($scope.user).then(function() {
-                $location.path("/home");
+                $location.path("/signin");
             }, function(response) {
                 alert("This username already exists");
             })

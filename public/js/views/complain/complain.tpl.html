@@ -8,23 +8,23 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="complain table-responsive">
-                    <table class="table">
-                        <tr>
-                            <th class="text-center">#</th>
-                            <th class="text-center">اسم المستخدم</th>
-                            <th class="text-center">الاقتراح او الشكوى</th>
-                            <th class="text-center">حذف</th>
+                    <table class="table table-bordered">
+                        <tr class="table-data">
+                            <th>#</th>
+                            <th>اسم المستخدم</th>
+                            <th>الاقتراح او الشكوى</th>
+                            <th>حذف</th>
                         </tr>
                         <tbody ng-repeat="complain in list">
-                            <tr>
-                                <th class="text-center">{{$index + 1}}</th>
-                                <th class="text-center">{{complain.username}}</th>
-                                <th class="text-center">{{complain.complain}}</th>
-                                <th class="text-center">
+                            <tr class="table-data">
+                                <td>{{$index + 1}}</td>
+                                <td>{{complain.username}}</td>
+                                <td>{{complain.complain}}</td>
+                                <td>
                                     <button class="btn btn-danger btn-sm" ng-click="deleteComplain(complain._id)">
                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                     </button>
-                                </th>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

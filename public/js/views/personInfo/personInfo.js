@@ -45,6 +45,10 @@ app.controller("personInfoCtrl", function ($scope, tempService, $location, idSer
         requestService.getDataByUserId(id).then(function(response) {
             $scope.yourInfo = response.data.data;
         })
+        usersService.getUserById(id).then(function(response) {
+            $scope.userInfo = response.data.data;
+            console.log($scope.userInfo);
+        })
     }
     
     $scope.submit = function () {

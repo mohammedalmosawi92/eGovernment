@@ -1,4 +1,4 @@
-var app = angular.module("app", ["ngRoute", "app.kayd", "app.hawiye", "app.sejel", "app.home", "app.passport", "app.personInfo", "app.confirm", "app.signup", "app.contactUs", "authModule", "idModule", "idNumberModule", "tokenModule", "privModule", "usernameModule", "statusModule", "app.complain", "app.users", "app.allData", "app.oneUser", "app.change", "app.changeReq", "tempModule"]);
+var app = angular.module("app", ["ngRoute","app.userReq", "app.kayd", "app.hawiye", "app.sejel", "app.home", "app.passport", "app.personInfo", "app.confirm", "app.signup", "app.contactUs", "authModule", "idModule", "idNumberModule", "tokenModule", "privModule", "usernameModule", "statusModule", "app.complain", "app.users", "app.allData", "app.oneUser", "app.change", "app.changeReq", "tempModule", "app.signin"]);
 
 app.config(function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix("");
@@ -55,7 +55,10 @@ app.controller("ctrl", function ($scope, authService, $location, idService, idNu
 
     //to set an obj for userInput
     $scope.userInput = {};
-
+    
+    $scope.usernameFunc = function() {
+        return usernameService.getUsername();
+    }
     //sign in
     $scope.signin = function () {
         $scope.userInput.idNumber = $scope.userInput.password;
@@ -67,7 +70,11 @@ app.controller("ctrl", function ($scope, authService, $location, idService, idNu
             usernameService.setUsername(response.data.username);
             statusService.setStatus(response.data.status);
             $scope.userInput = {};
-            $location.path("/");
+            $('#sign-modal').modal('show');
+            setTimeout(function() {
+                $('#sign-modal').modal('hide');
+                $location.path("/");
+            }, 3000)
         }, function (response) {
             alert("This username does not exsits");
         })

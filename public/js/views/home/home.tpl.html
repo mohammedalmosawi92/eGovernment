@@ -67,7 +67,9 @@
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse">
                             <div class="panel-body">
-                                <p>8 صورة شمسية</p>
+                                <p>2 صورة شمسية</p>
+                                <p>ورقة مختار</p>
+                                <p>صورة عن الهوية</p>
                             </div>
                         </div>
                     </div>
@@ -81,7 +83,11 @@
                             </h4>
                         </div>
                         <div id="collapseTwo" class="panel-collapse collapse">
-                            <div class="panel-body">Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra ultricies in, diam. Sed arcu. Cras consequat.</div>
+                            <div class="panel-body">
+                                <p>2 صورة شمسية</p>
+                                <p>ورقة مختار</p>
+                                <p>طابع بريدي</p>
+                            </div>
                         </div>
                     </div>
 
@@ -94,7 +100,10 @@
                             </h4>
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse">
-                            <div class="panel-body">Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra ultricies in, diam. Sed arcu. Cras consequat.</div>
+                            <div class="panel-body">
+                                <p>صورة عن الهوية</p>
+                                <p>طابع بريدي</p>
+                            </div>
                         </div>
                     </div>
 
@@ -107,7 +116,11 @@
                             </h4>
                         </div>
                         <div id="collapseFour" class="panel-collapse collapse">
-                            <div class="panel-body">Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra ultricies in, diam. Sed arcu. Cras consequat.</div>
+                            <div class="panel-body">
+                                <p>2 صورة شمسية</p>
+                                <p>ورقة مختار</p>
+                                <p>محضر فقدان هوية من الأمن الداخلي</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -122,15 +135,16 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="user-info">
-                                <i class="glyphicon glyphicon-ok icon"></i>
+                                <a ng-if="privilege() ==='user'" href="#kayd" class="glyphicon glyphicon-ok icon"></a>
+                                <a ng-if="privilege() === undefined || privilege() === 'admin'" class="glyphicon glyphicon-ok just-icon"></a>
                                 <h1>اخراج قيد</h1>
                                 <p>يمكنك أن تحصل على القيد الفردي الخاص بك أو لولدك في حال كان عمره دون 18 سنة </p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="user-info">
-                                <i class="glyphicon glyphicon-ok icon"></i>
-
+                                <a ng-if="privilege() ==='user'" href="#passport" class="glyphicon glyphicon-ok icon"></a>
+                                <a ng-if="privilege() === undefined || privilege() === 'admin'" class="glyphicon glyphicon-ok just-icon"></a>
                                 <h1>جواز سفر</h1>
                                 <p>يمكنك أن تحصل على جوزك اللبناني الخاص بك عبر موقعنا</p>
                             </div>
@@ -139,14 +153,16 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="user-info">
-                                <i class="glyphicon glyphicon-ok icon"></i>
+                                <a ng-if="privilege() ==='user'" href="#sejel" class="glyphicon glyphicon-ok icon"></a>
+                                <a ng-if="privilege() === undefined || privilege() === 'admin'" class="glyphicon glyphicon-ok just-icon"></a>
                                 <h1>سجل عدلي</h1>
                                 <p>يمكنك أن تحصل على السجل العدلي الخاص بك عبر موقعنا</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="user-info">
-                                <i class="glyphicon glyphicon-ok icon"></i>
+                                <a class="glyphicon glyphicon-ok icon" ng-if="privilege() ==='user'" href="#hawiye" ></a>
+                                <a ng-if="privilege() === undefined || privilege() === 'admin'" class="glyphicon glyphicon-ok just-icon"></a>
                                 <h1>الهوية اللبنانية</h1>
                                 <p>يمكنك أن تحصل على هويتك اللبنانية الخاص بك عبر موقعنا</p>
                             </div>

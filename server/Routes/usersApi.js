@@ -52,12 +52,9 @@ usersRouter.post("/:id", function(req, res) {
     })
 });
 
-//only admin can do the below requests
-usersRouter.use(adminPriv);
-
-//get all the users
-usersRouter.get("/", function(req, res) {
-    Users.find({}, function(err, data) {
+//get only one user using id
+usersRouter.get("/:id", function(req, res) {
+    Users.findById(req.params.id, function(err, data) {
         if(err) {
             res.status(500).send({err: err});
         }else {
@@ -66,9 +63,12 @@ usersRouter.get("/", function(req, res) {
     })
 });
 
-//get only one user using id
-usersRouter.get("/:id", function(req, res) {
-    Users.findById(req.params.id, function(err, data) {
+//only admin can do the below requests
+usersRouter.use(adminPriv);
+
+//get all the users
+usersRouter.get("/", function(req, res) {
+    Users.find({}, function(err, data) {
         if(err) {
             res.status(500).send({err: err});
         }else {

@@ -58,6 +58,9 @@
                                 <li><a href="#/complain">شكاوى</a></li>
                             </ul>
                         </li>
+                        <li ng-if="checkUser() === 'admin'">
+                            <a href="#/userReq">الطلبات المقدمة</a>
+                        </li>
                         <li class="dropdown" ng-if="checkUser() === 'user' && userStatus() === 'accepted'">
                             <span class="dropdown-toggle" data-toggle="dropdown">
                                 <h3>الخدمات</h3>
@@ -123,11 +126,27 @@
         </div>
     </div>
 
+    <div class="modal" id="sign-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none">
+        <div class="modal-dialog">
+            <div class="signin-loginmodal-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>تم تسجيل الدخول بنجاح</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="greeting">مرحبا بك معنا <span class="modal-username">{{usernameFunc()}}</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--  login Modal  -->
-    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none">
+    <div class="modal" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none">
         <div class="modal-dialog">
             <div class="loginmodal-container">
-                <h1>تسجيل الدخول</h1><br>
+                <h1>تسجيل الدخول</h1>
                 <form class="login-form" name="signinForm">
                     <input type="text" name="user" placeholder="أسم المستخدم" required ng-model="userInput.username" autofocus>
                     <input type="password" name="pass" placeholder="كلمة المرور" required ng-model="userInput.password">
@@ -145,12 +164,12 @@
             <div class="container">
                 <div class="row text-center">
 
-                    <div class="block col-sm-3 col-sm-6">
-                        <h1>الحكومة الالكترونية</h1>
-                        <ul>
-                            <li><a href="#">الصفحة الرئيسية</a></li>
-                            <li><a href="#">الخدمات</a></li>
-                            <li><a href="#">الخدمات</a></li>
+                    <div class="block col-sm-3">
+                        <h1> يمكنكم متابعتنا على مواقع التواصل الاجتماعي</h1>
+                        <ul class="social">
+                            <li><a href="http://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="http://www.facebook.com"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                            <li><a href="http://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                     <div class="block col-sm-3 col-sm-6">
@@ -158,33 +177,29 @@
                         <ul>
                             <li><a href="#">من نحن</a></li>
                             <li><a href="#">الحقوق</a></li>
-                            <li><a href="#/contactUs">للاتصال بنا</a></li>
                         </ul>
                     </div>
                     <div class="block col-sm-3 col-sm-6">
                         <h1>المساعدة</h1>
                         <ul>
-                            <li><a href="#">مركز المساعدة</a></li>
-                            <li><a href="#">الاقتراحات</a></li>
-                            <li><a href="#">الشكاوى</a></li>
+                            <li><a href="#contactUs">مركز المساعدة</a></li>
+                            <li><a href="#contactUs">الاقتراحات</a></li>
                         </ul>
                     </div>
 
-                    <div class="block col-sm-3">
-                        <h1> يمكنكم متابعتنا على مواقع التواصل الاجتماعي</h1>
-                        <ul class="social">
-
-                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <div class="block col-sm-3 col-sm-6">
+                        <h1>الحكومة الالكترونية</h1>
+                        <ul>
+                            <li><a href="#"> الصفحة الرئيسية </a></li>
+                            <li><a href="#/contactUs">للاتصال بنا</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://code.angularjs.org/1.6.3/angular.min.js"></script>
-    <script src="https://code.angularjs.org/1.6.3/angular-route.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.3/angular.js"></script>
+    <script src="https://code.angularjs.org/1.6.3/angular-route.js"></script>
     <script src="/js/app.js"></script>
     <!--  Routes  -->
     <script src="/js/views/home/home.js"></script>
@@ -201,7 +216,9 @@
     <script src="/js/views/allData/allData.js"></script>
     <script src="/js/views/oneUser/oneUser.js"></script>
     <script src="/js/views/change/change.js"></script>
+    <script src="/js/views/userReq/userReq.js"></script>
     <script src="/js/views/changeReq/changeReq.js"></script>
+    <script src="/js/views/signin/signin.js"></script>
 
     <!--  Services  -->
     <script src="/js/services/tempServ.js"></script>
@@ -216,6 +233,7 @@
     <script src="/js/services/usersServ.js"></script>
     <script src="/js/services/complainsServ.js"></script>
     <script src="/js/services/changeServ.js"></script>
+    <script src="/js/services/userReqServ.js"></script>
 
     <!--  Directives  -->
 

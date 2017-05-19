@@ -19,7 +19,7 @@ mongoose.connect("mongodb://localhost/" + config.database);
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-//setyp server to handle html
+//setup server to handle html
 app.use(express.static(path.join(__dirname + "\\..\\public\\")));
 app.set("views", __dirname + "\\..\\public\\views");
 app.engine("html", ejs.renderFile);
@@ -33,6 +33,7 @@ var authRouter = require("./Routes/auth.js");
 var filesRouter = require("./Routes/files.js");
 var complainRouter = require("./Routes/complainsApi.js");
 var changeRouter = require("./Routes/changeApi.js");
+var userReqRouter = require("./Routes/userReqApi.js");
 
 //use routes
 app.use(authRouter);
@@ -41,9 +42,10 @@ app.use("/users", usersRouter);
 app.use("/temp", apiTempRouter);
 app.use("/complain", complainRouter);
 app.use("/change", changeRouter);
+app.use("/userReq", userReqRouter);
 app.use(filesRouter);
 
 //listen to port
-app.listen(port, function() {
+app.listen(port, function () {
     console.log("I'm listening at port " + port);
 })

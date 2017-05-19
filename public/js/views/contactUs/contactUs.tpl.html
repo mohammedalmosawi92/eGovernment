@@ -1,97 +1,87 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="contact">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1>للاتصال بنا :</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-offset-3 col-md-6">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h3>الحمراء - الصنائع</h3>
-                            </div>
-                            <div class="col-md-6">
-                                <h3>العنوان :</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-offset-3 col-md-6">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h3>
-                                    01/754200<br>01/751601<br>01/751602
-                                </h3>
-                            </div>
-                            <div class="col-md-6">
-                                <h3> رقم الهاتف : </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-offset-3 col-md-6">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h3>01/750084</h3>
-                            </div>
-                            <div class="col-md-6">
-                                <h3>رقم الفاكس : </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-offset-3 col-md-6">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h3>9710 - 9500</h3>
-                            </div>
-                            <div class="col-md-6">
-                                <h3>رمز البريد : </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <form name="myForm">
+<div class="contact-page">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <div class="shakawa">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1> للاقتراحات او الشكاوى :</h1>
-                        </div>
+                <h1 class="contact-title">للاتصال بنا :</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>الحمراء - الصنائع</h3>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3">
-                            <textarea placeholder="الرجاء كتابة الاقتراحات او الشكاوى هنا" class="form-control" required ng-model="complain" rows="7"></textarea>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <button class="btn btn-info" ng-disabled="myForm.$invalid" ng-click="send()">ارسال</button>
-                        </div>
+                    <div class="col-md-6">
+                        <h3 class="contact-header">العنوان :</h3>
                     </div>
                 </div>
             </div>
         </div>
-    </form>
-    <div class="row text-right" ng-if="success">
-        <div class="col-md-12">
-            <h2 class="complain-msg">تم ارسال اقتراحكم بنجاح</h2>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>
+                            01/754200<br>01/751601<br>01/751602
+                        </h3>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="contact-header"> رقم الهاتف : </h3>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row text-right" ng-if="fail">
-        <div class="col-md-12">
-            <h2 class="complain-msg">لقد قمت بارسال اقتراح مسبقا</h2>
-            <h2 class="complain-msg">الرجاء الانتظار حتى يتم النظر في اقتراحكم ثم يمكنكم اضافة طلب اخر</h2>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>01/750084</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="contact-header">رقم الفاكس : </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>9710 - 9500</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="contact-header">رمز البريد : </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form name="myForm">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="user-complain-title"> للاقتراحات او الشكاوى :</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <textarea placeholder="الرجاء كتابة الاقتراحات او الشكاوى هنا" class="form-control" required ng-model="complain" rows="7"></textarea>
+                </div>
+            </div>
+            <div class="row complain-btn-row">
+                <div class="col-sm-2 col-sm-offset-5">
+                    <button class="btn btn-info complain-btn" ng-disabled="myForm.$invalid" ng-click="send()">ارسال</button>
+                </div>
+            </div>
+        </form>
+        <div class="row text-right" ng-if="success">
+            <div class="col-md-12">
+                <h2 class="complain-msg-accept">تم ارسال اقتراحكم بنجاح</h2>
+            </div>
+        </div>
+        <div class="row text-right" ng-if="fail">
+            <div class="col-md-12">
+                <h2 class="complain-msg">لقد قمت بارسال اقتراح مسبقا</h2>
+                <h2 class="complain-msg">الرجاء الانتظار حتى يتم النظر في اقتراحكم ثم يمكنكم اضافة طلب اخر</h2>
+            </div>
         </div>
     </div>
 </div>
