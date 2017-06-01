@@ -20,7 +20,7 @@
     <div class="flag">
         <div class="row text-right">
             <div class="col-md-12">
-                <h2>الموقع الرسمي للحكومة اللبنانية الالكترونية</h2>
+                <h2>الحكومة الالكترونية</h2>
             </div>
         </div>
     </div>
@@ -45,29 +45,29 @@
                         <li ng-if="checkUser() === 'admin'">
                             <a href="#/allData">كل البيانات</a>
                         </li>
-                        <li ng-if="checkUser() === 'admin'">
-                            <a href="#/users">المستخدمون</a>
-                        </li>
                         <li class="dropdown" ng-if="checkUser() === 'admin'">
-                            <span class="dropdown-toggle" data-toggle="dropdown">
-                                <h3>الخيارات</h3>
-                            </span>
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span>الخيارات</span>
+                            </a>
                             <ul class="dropdown-menu">
                                 <li><a href="#/confirm">تاكيد البيانات</a></li>
                                 <li><a href="#/change">طلبات التغير</a></li>
                                 <li><a href="#/complain">شكاوى</a></li>
+                                <li ng-if="checkUser() === 'admin'">
+                                    <a href="#/users">المستخدمون</a>
+                                </li>
                             </ul>
                         </li>
                         <li ng-if="checkUser() === 'admin'">
                             <a href="#/userReq">الطلبات المقدمة</a>
                         </li>
                         <li class="dropdown" ng-if="checkUser() === 'user' && userStatus() === 'accepted'">
-                            <span class="dropdown-toggle" data-toggle="dropdown">
-                                <h3>الخدمات</h3>
-                            </span>
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span>الخدمات</span>
+                            </a>
                             <ul class="dropdown-menu">
                                 <li><a href="#/passport">جواز سفر</a></li>
-                                <li><a href="#/kayd">اخراج تقيد</a></li>
+                                <li><a href="#/kayd">اخراج قيد</a></li>
                                 <li><a href="#/sejel">سجل عدلي</a></li>
                                 <li><a href="#/hawiye">هوية</a></li>
                             </ul>
@@ -77,10 +77,16 @@
                         <li><a href="#/home">الصفحة الرئيسية</a></li>
                     </ul>
                 </div>
+
+                <!--Collapse Navbar starts here-->
+
                 <div class="collapse-menu">
                     <div class="navbar-collapse collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
                             <li class="main-page"><a href="#/home" style="text-align: center">الصفحة الرئيسية</a></li>
+                            <li ng-if="checkUser() === 'admin'">
+                                <a href="#/userReq">الطلبات المقدمة</a>
+                            </li>
                             <li ng-if="checkUser() === 'user'"><a href="#/personInfo">بياناتك</a></li>
                             <li ng-if="userStatus() === 'accepted'"><a href="#/changeReq">تغير بياناتك</a></li>
 
@@ -90,7 +96,7 @@
                             </span>
                                 <ul class="dropdown-menu">
                                     <li><a href="#/passport">جواز سفر</a></li>
-                                    <li><a href="#/kayd">اخراج تقيد</a></li>
+                                    <li><a href="#/kayd">اخراج قيد</a></li>
                                     <li><a href="#/sejel">سجل عدلي</a></li>
                                     <li><a href="#/hawiye">هوية</a></li>
                                 </ul>
@@ -103,12 +109,12 @@
                                     <li><a href="#/confirm">تاكيد البيانات</a></li>
                                     <li><a href="#/change">طلبات التغير</a></li>
                                     <li><a href="#/complain">شكاوى</a></li>
+                                    <li ng-if="checkUser() === 'admin'">
+                                        <a href="#/users">المستخدمون</a>
+                                    </li>
                                 </ul>
                             </li>
 
-                            <li ng-if="checkUser() === 'admin'">
-                                <a href="#/users">المستخدمون</a>
-                            </li>
                             <li ng-if="checkUser() === 'admin'">
                                 <a href="#/allData">كل البيانات</a>
                             </li>

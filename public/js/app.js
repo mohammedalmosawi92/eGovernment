@@ -1,4 +1,4 @@
-var app = angular.module("app", ["ngRoute","app.userReq", "app.kayd", "app.hawiye", "app.sejel", "app.home", "app.passport", "app.personInfo", "app.confirm", "app.signup", "app.contactUs", "authModule", "idModule", "idNumberModule", "tokenModule", "privModule", "usernameModule", "statusModule", "app.complain", "app.users", "app.allData", "app.oneUser", "app.change", "app.changeReq", "tempModule", "app.signin"]);
+var app = angular.module("app", ["ngRoute", "app.userReq", "app.kayd", "app.hawiye", "app.sejel", "app.home", "app.passport", "app.personInfo", "app.confirm", "app.signup", "app.contactUs", "authModule", "idModule", "idNumberModule", "tokenModule", "privModule", "usernameModule", "statusModule", "app.complain", "app.users", "app.allData", "app.oneUser", "app.change", "app.changeReq", "tempModule", "app.signin"]);
 
 app.config(function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix("");
@@ -55,33 +55,41 @@ app.controller("ctrl", function ($scope, authService, $location, idService, idNu
 
     //to set an obj for userInput
     $scope.userInput = {};
-    
-    $scope.usernameFunc = function() {
+
+
+    $scope.usernameFunc = function () {
         return usernameService.getUsername();
     }
-    //sign in
+    $scope.num = 0;
+    //sign in;
+    var signinRepeat;
     $scope.signin = function () {
-        $scope.userInput.idNumber = $scope.userInput.password;
-        authService.signin($scope.userInput).then(function (response) {
-            idService.setId(response.data.id);
-            idNumberService.setId(response.data.idNumber);
-            tokenService.setToken(response.data.token);
-            privService.setPriv(response.data.privilege);
-            usernameService.setUsername(response.data.username);
-            statusService.setStatus(response.data.status);
-            $scope.userInput = {};
-            $('#sign-modal').modal('show');
-            setTimeout(function() {
-                $('#sign-modal').modal('hide');
-                $location.path("/");
-            }, 3000)
-        }, function (response) {
-            alert("This username does not exsits");
-        })
+        signinRepeat = setInterval(function () {
+            authService.signin($scope.userInput).then(function (response) {
+                idService.setId(response.data.id);
+                idNumberService.setId(response.data.idNumber);
+                tokenService.setToken(response.data.token);
+                privService.setPriv(response.data.privilege);
+                usernameService.setUsername(response.data.username);
+                statusService.setStatus(response.data.status);
+                if ($scope.num === 0) {
+                    $('#sign-modal').modal('show');
+                    setTimeout(function () {
+                        $('#sign-modal').modal('hide');
+                        $location.path("/");
+                    }, 2000)
+                }
+                $scope.num++
+            }, function (response) {
+                alert("This username does not exsits");
+            })
+        }, 1000)
     };
 
     //to delete everything from the local storage after the logout
     $scope.logout = function () {
+        clearInterval(signinRepeat)
+        $scope.userInput = {};
         idService.removeId();
         idNumberService.removeId();
         tokenService.removeToken();

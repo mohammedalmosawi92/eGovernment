@@ -18,13 +18,13 @@
             <div class="col-sm-4 col-sm-offset-4">
                 <div class="item-info">
                     <div class="info-span">الصورة الشمسية:</div>
-                    <img ng-src="/img/{{item.personalImage.split('fakepath\\')[1]}}" class="img-responive">
+                    <img ng-src="/img/{{item.personalImage.split('fakepath\\')[1]}}" class="img-responive imgs">
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="item-info">
                     <div class="info-span">صورة الهوية:</div>
-                    <img ng-src="/img/{{item.idImage.split('fakepath\\')[1]}}" class="img-responive">
+                    <img ng-src="/img/{{item.idImage.split('fakepath\\')[1]}}" class="img-responive imgs">
                 </div>
             </div>
         </div>
@@ -193,7 +193,7 @@
                 <div class="line"></div>
             </div>
         </div>
-        
+
         <div class="row text-center" ng-if="reqList.length > 0">
             <div class="col-md-12">
                 <h2 class="req-title"> الطلبات اللتي قام بها</h2>
@@ -203,15 +203,15 @@
             <div class="col-md-6 col-md-offset-3">
                 <table class="table table-bordered">
                     <tr>
-                        <th class="text-center">التاريخ</th>
-                        <th class="text-center">نوع الطلب</th>
                         <th class="text-center">#</th>
+                        <th class="text-center">نوع الطلب</th>
+                        <th class="text-center">التاريخ</th>
                     </tr>
                     <tbody ng-repeat="req in reqList">
                         <tr>
-                            <td class="text-center">{{req.date | date:'MM/dd/yyyy'}}</td>
-                            <td class="text-center">{{req.type}}</td>
                             <td class="text-center">{{$index + 1}}</td>
+                            <td class="text-center">{{req.type}}</td>
+                            <td class="text-center">{{req.date | date:'MM/dd/yyyy'}}</td>
                         </tr>
                     </tbody>
                 </table>

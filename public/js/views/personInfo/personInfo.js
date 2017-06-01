@@ -47,16 +47,14 @@ app.controller("personInfoCtrl", function ($scope, tempService, $location, idSer
         })
         usersService.getUserById(id).then(function(response) {
             $scope.userInfo = response.data.data;
-            console.log($scope.userInfo);
         })
     }
     
     $scope.submit = function () {
         tempService.postData($scope.personInfo).then(function (response) {
-            console.log("from temp")
             usersService.updateStatus(id,"waiting").then(function() {
                 statusService.setStatus("waiting");
-                $location.path("/signIn");
+                $location.path("/personInfo");
             })
         }, function (response) {
             console.log(response.status);

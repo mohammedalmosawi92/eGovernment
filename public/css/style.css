@@ -9,7 +9,7 @@
 html,
 body {
     max-width: 100%;
-    overflow-x: hidden;
+overflow-x: hidden;
     height: 100%;
     background: #EEEEEE
 }
@@ -98,7 +98,9 @@ body {
 .billing-row {
     margin-bottom: 20px;
 }
-
+.imgs {
+    height: 200px;
+}
 .bill-req {
     font-size: 25px;
     font-weight: 500;
@@ -186,6 +188,11 @@ body {
     margin-bottom: 0;
 }
 
+.navbar-nav>li {
+    color: #fff;
+    background: #0b913d;
+}
+
 .navbar-nav>li>a {
     color: #fff;
     font-size: 20px;
@@ -193,28 +200,47 @@ body {
     border: none;
     font-family: "Cairo";
     text-transform: uppercase;
-    padding: 15px;
+    padding: 15px 20px;
     font-weight: 700;
     text-align: center;
 }
 
 .navbar-nav>li>a:hover {
-    color: #C8E6C9;
-    background: none;
+    color: #0b913d;
+    background: #fff;
 }
 
 .navbar-nav>li>a:focus {
-    color: #fff;
-    background: none;
+    background: #fff;
+    color: #0b913d;
 }
 
-.dropdown span h3 {
-    font-family: "Cairo";
-    color: white;
-    font-weight: 700;
-    font-size: 20px;
-    margin-top: 14px;
+.dropdown {
+    display: block !important;
     cursor: pointer;
+    margin: auto
+}
+
+.dropdown span h3{
+    color: #fff;
+    font-size: 20px;
+    background-image: none;
+    border: none;
+    font-family: "Cairo";
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    display: block !important;
+/*
+    margin-top: 1px;
+    padding: 14px 20px;
+*/
+    overflow: hidden
+}
+
+.dropdown span h3:hover{
+    color: #0b913d;
+    background: #fff;
 }
 
 .signin-pointer {
@@ -456,7 +482,7 @@ textarea {
     color: inherit !important;
 }
 
-.users-title {
+.users-title h1{
     text-align: center;
     font-weight: 700;
     margin-bottom: 30px;
@@ -992,19 +1018,20 @@ textarea {
     text-align: center;
     font-weight: 700;
     margin-bottom: 40px;
-    color: #1A237E;
-    font-size: 70px;
 }
 
 .change-req-desc {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
-    margin-right: 20px;
     margin-bottom: 40px;
 }
 
 .add-field {
     margin-top: 10px;
+}
+
+.add-field span {
+    font-size: 18px;
 }
 
 .send-change {
@@ -1021,6 +1048,17 @@ textarea {
     text-align: center
 }
 
+select option{
+    padding-top: 5px !important;
+}
+
+select {
+    height: 40px !important;
+}
+
+input {
+    height: 40px !important;
+}
 
 /************************************************
 	signin page here
@@ -1293,12 +1331,25 @@ input[type=password]:hover {
 
 .dropdown-menu {
     text-align: center;
-    margin: auto;
     color: white;
     font-size: 20px;
     font-weight: 500;
+    width: 200px;
     font-family: "Cairo";
-    padding: 20px;
+    margin-left: -40px !important;
+    padding: 0px;
+}
+
+.dropdown-menu li a{
+    color: #0b913d;
+    background: #fff;
+    font-size: 22px;
+    font-weight: 500
+}
+
+.dropdown-menu li a:hover{
+    background: #0b913d;
+    color: #fff;
 }
 
 
